@@ -23,6 +23,36 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.portfolio-button-container {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.portfolio-button {
+  background-color: #41ee3b;
+  color: #000000;
+  font-size: 1.1rem;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.portfolio-button:hover {
+  background-color: #2a8506;
+  transform: translateY(-2px);
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.portfolio-button:active {
+  background-color: #16aa22;
+  transform: scale(0.97);
+  color: #ffffff; /* bosilganda yozuv rangi oq bo'lishi */
+}
 
 .icon-mobile3:before {
   content: "\e000";
@@ -1466,6 +1496,10 @@
 }
 .icon-twitter:before {
   content: "\ea7c";
+}
+.icon-telegram:before {
+  content: "\e9f3";
+  font-family: 'icomoon';
 }
 .icon-vimeo-with-circle:before {
   content: "\ea7d";
