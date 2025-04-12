@@ -15,7 +15,28 @@
 
 	
 	<link rel="icon" href="images\portfolio_icon1.png" type="image/x-icon">
-	
+	<style>
+		.thumb {
+			height: 250px;
+			overflow: hidden;
+			border-radius: 10px;
+			background-color: #f2f2f2;
+		}
+		
+		.image {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+			transition: transform 0.3s ease;
+		}
+		
+		.image:hover {
+			transform: scale(1.05); /* ozgina animatsiya */
+		}
+		
+		
+		</style>
 	  
 
 </head>
@@ -38,7 +59,7 @@
 						<a 
 						  class="nav-link" 
 						  href="All_Projects.html" 
-						  target="_blank"
+						  
 						  rel="noopener noreferrer"
 						  style="pointer-events: auto; position: relative; z-index: 1;"
 						  onclick="event.stopImmediatePropagation(); window.open(this.href, '_blank'); return false;"
@@ -96,7 +117,7 @@
 								<img class="image img-fluid" src="images\Screenshot of the dashboard.png" alt="">
 							</div>
 							
-							<a href="images/p1.jpg" class="img-pop-up">  
+							<a href="images\Screenshot of the dashboard.png" class="img-pop-up">  
 								<div class="middle">
 									<div class="text align-self-center d-flex"><img src="images/preview.png" alt=""></div>
 								</div>
@@ -115,9 +136,9 @@
 						<div class="relative">
 							<div class="thumb">
 								<div class="overlay overlay-bg"></div>
-								<img class="image img-fluid" src="images/p2.jpg" alt="">
+								<img class="image img-fluid" src="images\Retail_Sales_Screenshot.png" alt="">
 							</div>
-							<a href="images/p2.jpg" class="img-pop-up">  
+							<a href="images\Retail_Sales_Screenshot.png" class="img-pop-up">  
 								<div class="middle">
 									<div class="text align-self-center d-flex"><img src="images/preview.png" alt=""></div>
 								</div>
