@@ -8,3 +8,5 @@ wrangler.jsonc
 .gitignore
 README.md
 *.docx
+CLAUDE.md
+tools

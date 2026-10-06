@@ -7,21 +7,26 @@
 :root {
   color-scheme: light;
 
-  --bg: #f6f8fb;
-  --bg-alt: #eef2f8;
+  --bg: #ffffff;
+  --bg-alt: #f5f8ff;
   --surface: #ffffff;
-  --surface-2: #f3f6fb;
-  --text: #0f172a;
-  --text-2: #3c4a5f;
-  --muted: #5a6880;
-  --border: #e1e7f0;
-  --border-strong: #cdd6e3;
+  --surface-2: #f3f6ff;
+  --text: #0b1324;
+  --text-2: #3a4660;
+  --muted: #56627c;
+  --border: #e4e9f4;
+  --border-strong: #d0d9ea;
 
   --accent: #2563eb;
   --accent-strong: #1d4ed8;
   --accent-soft: #e8f0ff;
   --accent-ink: #1e40af;
   --on-accent: #ffffff;
+  --accent-2: #7c3aed;
+  --grad: linear-gradient(120deg, #2563eb 0%, #6d4aff 100%);
+  --glow-1: rgba(37, 99, 235, 0.13);
+  --glow-2: rgba(124, 58, 237, 0.11);
+  --glow-3: rgba(245, 158, 11, 0.10);
 
   --highlight: #f59e0b;
   --highlight-soft: #fff4dc;
@@ -35,11 +40,11 @@
   --dot: rgba(37, 99, 235, 0.22);
   --grid-line: rgba(15, 23, 42, 0.06);
 
-  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
-  --shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px -12px rgba(15, 23, 42, 0.14);
-  --shadow-lg: 0 2px 4px rgba(15, 23, 42, 0.04), 0 20px 40px -18px rgba(15, 23, 42, 0.22);
+  --shadow-sm: 0 1px 2px rgba(30, 64, 175, 0.05);
+  --shadow: 0 1px 2px rgba(30, 64, 175, 0.04), 0 10px 30px -14px rgba(37, 99, 235, 0.18);
+  --shadow-lg: 0 2px 6px rgba(30, 64, 175, 0.05), 0 24px 48px -20px rgba(37, 99, 235, 0.28);
 
-  --header-bg: rgba(246, 248, 251, 0.82);
+  --header-bg: rgba(255, 255, 255, 0.85);
 
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -55,8 +60,8 @@
   --s12: 96px;
 
   --radius-sm: 8px;
-  --radius: 12px;
-  --radius-lg: 16px;
+  --radius: 14px;
+  --radius-lg: 20px;
   --radius-pill: 999px;
 
   --container: 1120px;
@@ -66,40 +71,7 @@
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
-/* Dark theme: own palette, not an inversion */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-    --bg: #0b1120;
-    --bg-alt: #0e1628;
-    --surface: #111a2e;
-    --surface-2: #16213a;
-    --text: #e7ecf5;
-    --text-2: #b4bfd1;
-    --muted: #94a1b7;
-    --border: #1f2b45;
-    --border-strong: #2c3a58;
-    --accent: #60a5fa;
-    --accent-strong: #93c5fd;
-    --accent-soft: rgba(96, 165, 250, 0.12);
-    --accent-ink: #9cc7ff;
-    --on-accent: #08101f;
-    --highlight: #fbbf24;
-    --highlight-soft: rgba(251, 191, 36, 0.12);
-    --highlight-ink: #fcd27a;
-    --success: #4ade80;
-    --success-soft: rgba(74, 222, 128, 0.1);
-    --danger: #f87171;
-    --danger-soft: rgba(248, 113, 113, 0.1);
-    --dot: rgba(96, 165, 250, 0.22);
-    --grid-line: rgba(148, 163, 184, 0.08);
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 10px 28px -14px rgba(0, 0, 0, 0.6);
-    --shadow-lg: 0 2px 4px rgba(0, 0, 0, 0.3), 0 24px 48px -20px rgba(0, 0, 0, 0.7);
-    --header-bg: rgba(11, 17, 32, 0.8);
-  }
-}
-
+/* Dark theme: own palette, only when chosen with the toggle */
 :root[data-theme="dark"] {
   color-scheme: dark;
   --bg: #0b1120;
@@ -129,6 +101,11 @@
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 10px 28px -14px rgba(0, 0, 0, 0.6);
   --shadow-lg: 0 2px 4px rgba(0, 0, 0, 0.3), 0 24px 48px -20px rgba(0, 0, 0, 0.7);
   --header-bg: rgba(11, 17, 32, 0.8);
+  --accent-2: #a78bfa;
+  --grad: linear-gradient(120deg, #60a5fa 0%, #a78bfa 100%);
+  --glow-1: rgba(96, 165, 250, 0.10);
+  --glow-2: rgba(167, 139, 250, 0.08);
+  --glow-3: rgba(251, 191, 36, 0.05);
 }
 
 /* ---------- Base ---------- */
@@ -351,10 +328,6 @@ textarea { font: inherit; color: inherit; }
 .theme-toggle .icon-moon { display: none; }
 :root[data-theme="dark"] .theme-toggle .icon-sun { display: none; }
 :root[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .theme-toggle .icon-sun { display: none; }
-  :root:not([data-theme="light"]) .theme-toggle .icon-moon { display: block; }
-}
 
 .menu-toggle { display: none; }
 html:not(.js) .theme-toggle { display: none; }
@@ -410,10 +383,11 @@ html:not(.js) .theme-toggle { display: none; }
 }
 .btn-primary {
   background: var(--accent);
+  background-image: var(--grad);
   color: var(--on-accent);
-  box-shadow: 0 6px 16px -8px var(--accent);
+  box-shadow: 0 8px 20px -10px var(--accent-2);
 }
-.btn-primary:hover { background: var(--accent-strong); color: var(--on-accent); }
+.btn-primary:hover { background: var(--accent-strong); background-image: var(--grad); color: var(--on-accent); filter: brightness(1.06); box-shadow: 0 12px 24px -10px var(--accent-2); }
 .btn-secondary {
   background: var(--surface);
   color: var(--text);
@@ -471,8 +445,8 @@ html:not(.js) .theme-toggle { display: none; }
 }
 
 /* ---------- Sections ---------- */
-.section { padding-block: clamp(56px, 9vw, 96px); }
-.section-alt { background: var(--bg-alt); border-block: 1px solid var(--border); }
+.section { padding-block: clamp(64px, 10vw, 120px); }
+.section-alt { background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%); }
 
 .section-head {
   display: flex;
@@ -503,8 +477,12 @@ html:not(.js) .theme-toggle { display: none; }
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  padding-block: clamp(40px, 8vw, 96px) clamp(48px, 8vw, 88px);
+  padding-block: clamp(48px, 9vw, 112px) clamp(56px, 9vw, 104px);
   overflow: hidden;
+  background:
+    radial-gradient(42% 55% at 88% 12%, var(--glow-2), transparent 70%),
+    radial-gradient(45% 60% at 8% 0%, var(--glow-1), transparent 70%),
+    radial-gradient(35% 45% at 55% 100%, var(--glow-3), transparent 70%);
 }
 .hero::before {
   /* faint chart-paper grid behind the hero */
@@ -535,6 +513,18 @@ html:not(.js) .theme-toggle { display: none; }
   display: block;
   margin-top: 6px;
   color: var(--accent);
+  font-size: 0.78em;
+  letter-spacing: -0.03em;
+}
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .hero-title .role,
+  .fact-value {
+    background: var(--grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
 }
 .hero-lead {
   margin-top: 20px;
@@ -1392,3 +1382,8 @@ a.contact-item:hover { background: var(--surface-2); color: var(--text); }
   .site-header, .site-footer, .dash, .filters, .pager, .skip-link { display: none !important; }
   body { background: #fff; color: #000; }
 }
+
+/* ---------- Experience: stack chips under a role ---------- */
+.tl-stack { margin-top: 14px; }
+.tl-list strong { color: var(--text); font-weight: 600; }
+.nowrap { white-space: nowrap; }

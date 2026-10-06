@@ -7,9 +7,6 @@
 
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  function storageGet(key) {
-    try { return window.localStorage.getItem(key); } catch (e) { return null; }
-  }
   function storageSet(key, value) {
     try { window.localStorage.setItem(key, value); } catch (e) { /* storage unavailable */ }
   }
@@ -19,12 +16,9 @@
   for (var y = 0; y < years.length; y++) years[y].textContent = String(new Date().getFullYear());
 
   /* ---------- Theme toggle ---------- */
-  var darkQuery = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
-
+  /* Light by default; dark only when the visitor picks it with the toggle. */
   function currentTheme() {
-    var set = root.getAttribute("data-theme");
-    if (set === "light" || set === "dark") return set;
-    return darkQuery && darkQuery.matches ? "dark" : "light";
+    return root.getAttribute("data-theme") === "dark" ? "dark" : "light";
   }
 
   function syncThemeUI() {
@@ -37,9 +31,7 @@
     }
     var metas = document.querySelectorAll('meta[name="theme-color"]');
     for (var m = 0; m < metas.length; m++) {
-      if (root.getAttribute("data-theme")) {
-        metas[m].setAttribute("content", theme === "dark" ? "#0b1120" : "#f6f8fb");
-      }
+      metas[m].setAttribute("content", theme === "dark" ? "#0b1120" : "#ffffff");
     }
   }
 
@@ -52,11 +44,6 @@
     syncThemeUI();
   });
 
-  if (darkQuery) {
-    var onSchemeChange = function () { if (!storageGet("theme")) syncThemeUI(); };
-    if (darkQuery.addEventListener) darkQuery.addEventListener("change", onSchemeChange);
-    else if (darkQuery.addListener) darkQuery.addListener(onSchemeChange);
-  }
   syncThemeUI();
 
   /* ---------- Header: scrolled state ---------- */
