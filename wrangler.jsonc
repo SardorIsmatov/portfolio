@@ -1,0 +1,10 @@
+{
+  // Cloudflare Workers static-assets config. Cloudflare's Git integration
+  // (Workers Builds) reads this file and deploys on every push to main.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "portfolio",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "."
+  }
+}
