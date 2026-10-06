@@ -7,7 +7,4 @@ wrangler.jsonc
 .assetsignore
 .gitignore
 README.md
-readme.txt
-prepros-6.config
-scss
 *.docx

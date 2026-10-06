@@ -1,508 +1,379 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-	<title>Sardor Ismatov's Portfolio</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="css/animate.css">
-	<link rel="stylesheet" href="css/flexslider.css">
-	<link rel="stylesheet" href="fonts/icomoon/style.css">
-
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/style.css">
-
-	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700" rel="stylesheet">
-
-	
-	<link rel="icon" href="images\portfolio_icon1.png" type="image/x-icon">
-	<style>
-		.thumb {
-			height: 250px;
-			overflow: hidden;
-			border-radius: 10px;
-			background-color: #f2f2f2;
-		}
-		
-		.image {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			display: block;
-			transition: transform 0.3s ease;
-		}
-		
-		.image:hover {
-			transform: scale(1.05); /* ozgina animatsiya */
-		}
-		
-		
-		</style>
-	  <!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-4Y6XTBYX7K"></script>
-		<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-
-		gtag('config', 'G-4Y6XTBYX7K');
-		</script>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sardor Ismatov | Data Analyst Portfolio</title>
+  <meta name="description" content="Sardor Ismatov, a data analyst in Tashkent, Uzbekistan. Power BI dashboards and SQL projects, built with Excel, SQL, Python and Power BI.">
+  <meta name="author" content="Sardor Ismatov">
+  <meta name="theme-color" content="#f6f8fb" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b1120" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sardor Ismatov">
+  <meta property="og:title" content="Sardor Ismatov | Data Analyst Portfolio">
+  <meta property="og:description" content="Sardor Ismatov, a data analyst in Tashkent, Uzbekistan. Power BI dashboards and SQL projects, built with Excel, SQL, Python and Power BI.">
+  <meta property="og:image" content="assets/img/sardor-ismatov-og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-48.png" sizes="48x48" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script>
+    (function () {
+      var d = document.documentElement;
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "light" || t === "dark") d.setAttribute("data-theme", t);
+      } catch (e) {}
+      d.className += " js";
+    })();
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4Y6XTBYX7K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4Y6XTBYX7K');
+  </script>
+  <script src="assets/js/site.js" defer></script>
 </head>
-<body data-spy="scroll" data-target="#pb-navbar" data-offset="200">
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Sardor Ismatov, home">
+        <span class="brand-mark" aria-hidden="true">SI</span>
+        <span class="brand-name">Sardor Ismatov</span>
+        <span class="brand-role">Data Analyst</span>
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="#top" data-spy="top">Home</a></li>
+          <li><a class="nav-link" href="#projects" data-spy="projects">Projects</a></li>
+          <li><a class="nav-link" href="#experience" data-spy="experience">Experience</a></li>
+          <li><a class="nav-link" href="#about" data-spy="about">About</a></li>
+          <li><a class="nav-link" href="#contact" data-spy="contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Toggle colour theme">
+        <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg><svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5Z"/></svg>
+      </button>
+      <button class="icon-btn menu-toggle" type="button" data-menu-toggle aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+        <svg class="icon icon-open" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+  </header>
 
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Portfolio</p>
+          <h1 class="hero-title" id="hero-title">Sardor Ismatov <span class="role">Data Analyst</span></h1>
+          <p class="hero-lead">I turn raw data into clear dashboards and actionable insights with SQL, Python, Power BI and Excel, drawing on a background in banking and finance.</p>
+          <ul class="chips" aria-label="Main tools">
+            <li class="chip chip-accent">SQL</li>
+            <li class="chip chip-accent">Python</li>
+            <li class="chip chip-accent">Power BI</li>
+            <li class="chip chip-accent">Excel</li>
+          </ul>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View projects <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn-secondary" href="files/Sardor_Ismatov_Resume.pdf" download="Sardor_Ismatov_Resume.pdf"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg> Download CV</a>
+          </div>
+          <ul class="hero-meta">
+            <li><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg> Tashkent, Uzbekistan</li>
+            <li><a href="mailto:sardorjonumidvich@gmail.com"><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg> sardorjonumidvich@gmail.com</a></li>
+          </ul>
+        </div>
+        <div class="portrait">
+          <div class="portrait-frame">
+            <picture>
+              <source srcset="assets/img/sardor-ismatov.webp" type="image/webp">
+              <img src="assets/img/sardor-ismatov.jpg" width="720" height="900" alt="Portrait of Sardor Ismatov" fetchpriority="high" decoding="async">
+            </picture>
+          </div>
+          <div class="portrait-badge">
+            <span class="badge-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            <div><strong>Data Analyst</strong><span>MAAB Innovation &middot; since Mar 2025</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <div class="container">
+      <ul class="facts" aria-label="Quick facts">
+        <li class="fact"><span class="fact-value">3</span><span class="fact-label">Power BI dashboards</span></li>
+        <li class="fact"><span class="fact-value">2</span><span class="fact-label">SQL projects</span></li>
+        <li class="fact"><span class="fact-value">C1</span><span class="fact-label">IELTS English</span></li>
+        <li class="fact"><span class="fact-value">Tashkent</span><span class="fact-label">Based in Uzbekistan</span></li>
+      </ul>
+    </div>
 
-	<nav class="navbar navbar-expand-lg site-navbar navbar-light bg-light" id="pb-navbar">
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Featured work</p>
+            <h2 class="section-title" id="projects-title">Case studies</h2>
+            <p class="section-lead">Two Power BI dashboards with a full write-up: the question, the findings and how the report is built.</p>
+          </div>
+          <a class="btn btn-secondary" href="All_Projects.html">All projects <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <ul class="project-grid featured">
+        <li class="reveal" data-type="powerbi">
+          <article class="project-card">
+            <a class="project-media" href="Uzbekistan_population.html" tabindex="-1" aria-hidden="true"><picture><source srcset="assets/img/uzbekistan-population-dashboard.webp" type="image/webp"><img src="assets/img/uzbekistan-population-dashboard.png" width="1409" height="830" alt="Uzbekistan Population Growth dashboard in Power BI with KPI cards, population over time, year-over-year change and the most populated districts" loading="lazy" decoding="async"></picture></a>
+            <div class="project-body">
+              <h3 class="project-title"><a href="Uzbekistan_population.html">Uzbekistan Population Growth Analysis (2010&ndash;2023)</a></h3>
+              <p class="project-desc">Power BI dashboard built on real demographic data, tracking population change across regions, districts and years.</p>
+              <ul class="chips" aria-label="Tools"><li class="chip">Power BI</li><li class="chip">SQL</li><li class="chip">Pandas</li></ul>
+              <div class="project-actions"><a class="btn btn-primary btn-sm" href="Uzbekistan_population.html">Case study <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-ghost btn-sm" href="https://app.powerbi.com/view?r=eyJrIjoiNWJhZWM4MTMtYzA1Zi00YmM3LTg2YmItYjM2ZmEwZDI5Zjk1IiwidCI6ImY3YjQ5MjU0LTMxZmYtNDVkZS04NGJkLTEyMDczYzcyZDMzMSIsImMiOjEwfQ%3D%3D" target="_blank" rel="noopener noreferrer">Open dashboard<span class="visually-hidden"> (opens in a new tab)</span><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></div>
+            </div>
+          </article>
+        </li>
+        <li class="reveal" data-type="powerbi">
+          <article class="project-card">
+            <a class="project-media" href="Retail_sales_page.html" tabindex="-1" aria-hidden="true"><picture><source srcset="assets/img/retail-sales-dashboard.webp" type="image/webp"><img src="assets/img/retail-sales-dashboard.png" width="1271" height="702" alt="Retail Sales Overview dashboard in Power BI with KPI cards, monthly sales, product categories, revenue by state, customer segments and store types" loading="lazy" decoding="async"></picture></a>
+            <div class="project-body">
+              <h3 class="project-title"><a href="Retail_sales_page.html">Retail Sales Analysis</a></h3>
+              <p class="project-desc">Power BI sales dashboard on a demo dataset, with drill-through and drill-down into sales, products, stores and customers.</p>
+              <ul class="chips" aria-label="Tools"><li class="chip">Power BI</li><li class="chip">DAX</li><li class="chip">SQL</li><li class="chip">Python</li></ul>
+              <div class="project-actions"><a class="btn btn-primary btn-sm" href="Retail_sales_page.html">Case study <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-ghost btn-sm" href="https://app.powerbi.com/view?r=eyJrIjoiZTNhMTE0NjctYjQyZS00NDI1LThkNzgtZmE3OGNmNzNlZjAzIiwidCI6ImY3YjQ5MjU0LTMxZmYtNDVkZS04NGJkLTEyMDczYzcyZDMzMSIsImMiOjEwfQ%3D%3D" target="_blank" rel="noopener noreferrer">Open dashboard<span class="visually-hidden"> (opens in a new tab)</span><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></div>
+            </div>
+          </article>
+        </li>
+        </ul>
+      </div>
+    </section>
 
-		<div class="container">
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+    <section class="section section-alt" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Toolkit</p>
+            <h2 class="section-title" id="skills-title">Skills</h2>
+          </div>
+        </div>
+        <ul class="skills-grid">
+          <li class="card skill-card reveal">
+            <div class="skill-head"><span class="skill-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg></span><h3>Data &amp; querying</h3></div>
+            <p>Cleaning, joining and summarising data in spreadsheets and databases.</p>
+            <ul class="chips"><li class="chip">SQL</li><li class="chip">Excel</li></ul>
+          </li>
+          <li class="card skill-card reveal">
+            <div class="skill-head"><span class="skill-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 6l-3 12"/></svg></span><h3>Python</h3></div>
+            <p>Analysis and charts in Python, including working with APIs.</p>
+            <ul class="chips"><li class="chip">Pandas</li><li class="chip">NumPy</li><li class="chip">Matplotlib</li><li class="chip">Seaborn</li><li class="chip">API requests</li></ul>
+          </li>
+          <li class="card skill-card reveal">
+            <div class="skill-head"><span class="skill-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20h16M7 16v-5M12 16V7M17 16v-8"/></svg></span><h3>BI &amp; visualisation</h3></div>
+            <p>Interactive Power BI reports that people can explore on their own.</p>
+            <ul class="chips"><li class="chip">Power BI</li><li class="chip">DAX</li><li class="chip">Drill-through</li><li class="chip">Drill-down</li><li class="chip">Data visualization</li></ul>
+          </li>
+          <li class="card skill-card reveal">
+            <div class="skill-head"><span class="skill-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M3 20a6 6 0 0 1 12 0M16 4.5a3.5 3.5 0 0 1 0 7M21 20a6 6 0 0 0-3.5-5.5"/></svg></span><h3>Working style</h3></div>
+            <p>Skills built in banking and in teaching data analytics.</p>
+            <ul class="chips"><li class="chip">Analytical thinking</li><li class="chip">Time management</li><li class="chip">Customer service</li><li class="chip">Teamwork</li></ul>
+          </li>
+        </ul>
+      </div>
+    </section>
 
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Background</p>
+            <h2 class="section-title" id="experience-title">Experience &amp; education</h2>
+          </div>
+          <a class="btn btn-secondary" href="files/Sardor_Ismatov_Resume.pdf" download="Sardor_Ismatov_Resume.pdf"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg> Download CV</a>
+        </div>
+        <div class="timeline-grid">
+          <div>
+            <h3 class="timeline-heading"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12.5h18"/></svg> Experience</h3>
+            <ol class="timeline">
+              <li class="tl-item is-current reveal">
+                <article class="card tl-card">
+                  <div class="tl-top"><span class="tl-date">Mar 2025 &ndash; Present<span class="tl-now">Current</span></span><span class="tl-date">Tashkent</span></div>
+                  <h4>Data Analyst (Support Teacher)</h4>
+                  <p class="tl-org"><a href="https://it-market.uz/company/5Cjm2RyaagiFPc8zuK7Lsg/" target="_blank" rel="noopener noreferrer">MAAB Innovation<span class="visually-hidden"> (opens in a new tab)</span></a></p>
+                  <ul class="tl-list">
+                    <li>Support students in data analytics projects with SQL, Excel, Python (Pandas, Seaborn) and Power BI.</li>
+                    <li>Debug code, review submissions and give feedback on data cleaning and visualization.</li>
+                  </ul>
+                </article>
+              </li>
+              <li class="tl-item reveal">
+                <article class="card tl-card">
+                  <div class="tl-top"><span class="tl-date">Aug 2023 &ndash; Nov 2023</span><span class="tl-date">Bukhara</span></div>
+                  <h4>Intern</h4>
+                  <p class="tl-org"><a href="https://brb.uz/" target="_blank" rel="noopener noreferrer">Biznesni Rivojlantirish Banki<span class="visually-hidden"> (opens in a new tab)</span></a> &middot; Karakul region bank services office</p>
+                  <ul class="tl-list">
+                    <li>Tracked loan repayment progress in Excel and contacted 400+ loan defaulters by phone, contributing to a 60% faster repayment process.</li>
+                    <li>Advised 200+ customers on deposits, interest rates and loans (customer satisfaction +80%).</li>
+                    <li>Managed 80+ customer accounts in iABS.</li>
+                    <li>Retrieved 120+ ATM cards (customer satisfaction +70%).</li>
+                  </ul>
+                </article>
+              </li>
+              <li class="tl-item reveal">
+                <article class="card tl-card">
+                  <div class="tl-top"><span class="tl-date">Jan 2023 &ndash; Mar 2023</span><span class="tl-date">Bukhara</span></div>
+                  <h4>Intern</h4>
+                  <p class="tl-org"><a href="https://brb.uz/" target="_blank" rel="noopener noreferrer">Biznesni Rivojlantirish Banki<span class="visually-hidden"> (opens in a new tab)</span></a> &middot; Bukhara city branch</p>
+                  <ul class="tl-list">
+                    <li>Organised the document archive and kept Excel logs of customer interactions and loan statuses.</li>
+                    <li>Assisted 400+ customers, resolving issues twice as fast.</li>
+                    <li>Contacted 200+ loan defaulters, speeding up the repayment process by 40%.</li>
+                    <li>Joined field visits on problem loans (+30% efficiency).</li>
+                  </ul>
+                </article>
+              </li>
+            </ol>
+          </div>
+          <div>
+            <h3 class="timeline-heading"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m2 9 10-5 10 5-10 5-10-5Z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5M22 9v5"/></svg> Education</h3>
+            <ol class="timeline">
+              <li class="tl-item reveal">
+                <article class="card tl-card">
+                  <div class="tl-top"><span class="tl-date">Nov 2024 &ndash; Feb 2025</span></div>
+                  <h4>Data Analytics trainee</h4>
+                  <p class="tl-org"><a href="https://academy.maab.uz/" target="_blank" rel="noopener noreferrer">MAAB Academy<span class="visually-hidden"> (opens in a new tab)</span></a></p>
+                  <p class="tl-text">Training in SQL, Python and Power BI.</p>
+                </article>
+              </li>
+              <li class="tl-item reveal">
+                <article class="card tl-card">
+                  <div class="tl-top"><span class="tl-date">Sep 2019 &ndash; Jul 2023</span></div>
+                  <h4>Economics / Banking</h4>
+                  <p class="tl-org"><a href="https://www.sies.uz/" target="_blank" rel="noopener noreferrer">Samarkand Institute of Economics and Service<span class="visually-hidden"> (opens in a new tab)</span></a></p>
+                  <p class="tl-text">Focused on finance, banking operations and economics.</p>
+                </article>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
 
-			<div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample09">
-				<ul class="navbar-nav">
-					<li class="nav-item"><a class="nav-link" href="#section-home">Home</a></li>
-					<li class="nav-item">
-						<a 
-						  class="nav-link" 
-						  href="All_Projects.html" 
-						  
-						  rel="noopener noreferrer"
-						  style="pointer-events: auto; position: relative; z-index: 1;"
-						  onclick="event.stopImmediatePropagation(); window.open(this.href, '_blank'); return false;"
-						>
-						  Portfolio
-						</a>
-					  </li>
-					<li class="nav-item"><a class="nav-link" href="#section-resume">Resume</a></li>
-					<li class="nav-item"><a class="nav-link" href="#section-about">About me</a></li>
-					<li class="nav-item"><a class="nav-link" href="#section-contact">Contact</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+    <section class="section section-alt" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">About</p>
+            <h2 class="section-title" id="about-title">About me</h2>
+          </div>
+        </div>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>I&rsquo;m a passionate, detail-oriented data analyst with a background in banking and finance. I turn raw data into actionable insights using Excel, SQL, Python and Power BI.</p>
+            <p>My journey started with a Bachelor&rsquo;s in Banking, followed by banking internships and a role as a support teacher in data analytics. I enjoy solving problems, building dashboards and helping others understand data better.</p>
+            <p>Today I focus on real-world projects that combine analytics with business impact.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact">Get in touch <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              <a class="btn btn-secondary" href="files/Sardor_Ismatov_Resume.pdf" download="Sardor_Ismatov_Resume.pdf"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg> Download CV</a>
+            </div>
+          </div>
+          <div class="about-side">
+            <div class="card info-card reveal">
+              <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 21l5-3 5 3-1.5-7"/></svg> Certificates</h3>
+              <ul class="cert-list">
+                <li><div><strong>IELTS C1</strong></div><span class="year">2023</span></li>
+                <li><div><strong>Microsoft Excel &ndash; Excel from Beginner to Advanced</strong><span>Udemy</span></div><span class="year">2024</span></li>
+                <li><div><strong>Google Data Analytics: Foundations</strong><span>Coursera</span></div><span class="year">2024</span></li>
+              </ul>
+            </div>
+            <div class="card info-card reveal">
+              <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg> Languages</h3>
+              <ul class="lang-list">
+                <li><span>Uzbek</span><span class="level">Native</span></li>
+                <li><span>English</span><span class="level">Professional</span></li>
+                <li><span>Russian</span><span class="level">Intermediate</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2 class="section-title" id="contact-title">Get in touch</h2>
+            <p class="section-lead">Have a question or an opportunity? Send a message or reach me directly.</p>
+          </div>
+        </div>
+        <div class="contact-grid">
+          <form class="card form-card" action="https://formspree.io/f/meoavvar" method="POST" data-contact-form data-email="sardorjonumidvich@gmail.com">
+            <div class="form-grid">
+              <div class="field">
+                <label for="cf-name">Name</label>
+                <input id="cf-name" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="cf-email">Email</label>
+                <input id="cf-email" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div class="field full">
+                <label for="cf-phone">Phone <span class="opt">(optional)</span></label>
+                <input id="cf-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel">
+              </div>
+              <div class="field full">
+                <label for="cf-message">Message</label>
+                <textarea id="cf-message" name="message" rows="6" required></textarea>
+              </div>
+            </div>
+            <div class="hp" aria-hidden="true">
+              <label for="cf-gotcha">Leave this field empty</label>
+              <input id="cf-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="form-foot">
+              <p class="form-note">All fields except phone are required.</p>
+              <button class="btn btn-primary" type="submit"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 3 10 14M21 3l-7 18-4-7-7-4 18-7Z"/></svg> Send message</button>
+            </div>
+            <div class="form-status" data-form-status role="status" aria-live="polite" hidden></div>
+          </form>
+          <div class="card details-card">
+            <h3>Contact details</h3>
+            <ul class="contact-list">
+          <li><a class="contact-item" href="mailto:sardorjonumidvich@gmail.com"><span class="contact-ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></span><span><small>Email</small><span>sardorjonumidvich@gmail.com</span></span></a></li>
+          <li><a class="contact-item" href="tel:+998931006500"><span class="contact-ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18h2"/></svg></span><span><small>Phone</small><span>+998&nbsp;93&nbsp;100&nbsp;65&nbsp;00</span></span></a></li>
+          <li><div class="contact-item"><span class="contact-ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><span><small>Location</small><span>Tashkent, Uzbekistan</span></span></div></li>
+            </ul>
+            <ul class="socials">
+              <li><a class="social-link" href="https://t.me/Sardor_Umidvich" target="_blank" rel="noopener noreferrer" aria-label="Telegram (opens in a new tab)"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 4 3 11.2l6.3 2.3L12 20l3.4-4.2 4.1 3.2L21 4Z"/><path d="m9.3 13.5 7.2-5.2"/></svg></a></li>
+              <li><a class="social-link" href="https://www.linkedin.com/in/sardor-ismatov/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V16M8 7.5v.01M12 16v-5.5M12 13a2.5 2.5 0 0 1 5 0v3"/></svg></a></li>
+              <li><a class="social-link" href="https://github.com/SardorIsmatov" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li>
+              <li><a class="social-link" href="https://www.instagram.com/sardo.me" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in a new tab)"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-
-
-	<section class="site-hero" style="background-image: url(images/image_1.jpg);" id="section-home" data-stellar-background-ratio="0.5">
-		<div class="container">
-			<div class="row intro-text align-items-center justify-content-center">
-				<div class="col-md-10 text-center pt-5">
-
-					<h1 class="site-heading site-animate">Hi!, I'm <strong class="d-block">Sardor Ismatov</strong></h1>
-					<strong class="d-block text-white text-uppercase letter-spacing">Data Analyst</strong>
-					<strong class="d-block text-white text-uppercase letter-spacing">SQL, Python, Power BI</strong>
-				</div>
-			</div>
-		</div>
-	</section> 
-	<!-- section -->
-
-
-
-
-
-
-	<section class="site-section" >
-		<div class="container">
-			<div class="row">
-				<div class="section-heading text-center col-md-12">
-					<h2> <strong> Portfolio </strong> </h2>
-				</div>
-			</div>
-			
-
-			<div class="filters-content">
-				<div class="row grid">
-					<div class="single-portfolio col-sm-4 all mockup">
-						<div class="relative">
-							<a href="Uzbekistan_population.html">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								
-								<img class="image img-fluid" src="images\Screenshot of the dashboard.png" alt="">
-							</div>
-							
-							<a href="images\Screenshot of the dashboard.png" class="img-pop-up">  
-								<div class="middle">
-									<div class="text align-self-center d-flex"><img src="images/preview.png" alt=""></div>
-								</div>
-							</a>  
-							</a>                                  
-						</div>
-						<div class="p-inner">
-						<a href="Uzbekistan_population.html">
-							<h4>Uzbekistan population Growth</h4>
-							<div class="cat">2010 - 2023 years</div>
-						</a>
-						</div> 
-					                                    
-					</div>
-					<div class="single-portfolio col-sm-4 all mockup">
-						<a href="Retail_sales_page.html">
-
-						<div class="relative">
-							
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<img class="image img-fluid" src="images\Retail_Sales_Screenshot.png" alt="">
-							</div>
-							<a href="images\Retail_Sales_Screenshot.png" class="img-pop-up">  </a>
-								<div class="middle">
-									<div class="text align-self-center d-flex"><img src="images/preview.png" alt=""></div>
-								</div>
-							                                  
-						</div>
-				
-						<div class="p-inner">
-							<a href="Retail_sales_page.html">
-							<h4>Retail Sales Analysis</h4>
-							<div class="cat">Project</div>
-						</a>
-						</div>  
-					</a>
-					</div>                            
-					<!-- <div class="single-portfolio col-sm-4 all packaging">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<img class="image img-fluid" src="images/p3.jpg" alt="">
-							</div>
-							<a href="images/p3.jpg" class="img-pop-up">  
-								<div class="middle">
-									<div class="text align-self-center d-flex"><img src="images/preview.png" alt=""></div>
-								</div>
-							</a> 
-
-						</div>
-						<div class="p-inner">
-							<h4>Creative Package Design</h4>
-							<div class="cat">Packaging</div>
-						</div>
-					</div>
-					<div class="single-portfolio col-sm-4 all packaging">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<img class="image img-fluid" src="images/p4.jpg" alt="">
-							</div>
-							<a href="images/p4.jpg" class="img-pop-up">  
-								<div class="middle">
-									<div class="text align-self-center d-flex"><img src="images/preview.png" alt=""></div>
-								</div>
-							</a>                                
-						</div> 
-						<div class="p-inner">
-							<h4>Packaging Brands</h4>
-							<div class="cat">Packaging</div>
-						</div>
-					</div>
-					<div class="single-portfolio col-sm-4 all typography">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<img class="image img-fluid" src="images/p5.jpg" alt="">
-							</div>
-							<a href="images/p5.jpg" class="img-pop-up">  
-								<div class="middle">
-									<div class="text align-self-center d-flex"><img src="images/preview.png" alt=""></div>
-								</div>
-							</a>                                
-						</div>
-						<div class="p-inner">
-							<h4>Isometric 3D Extrusion</h4>
-							<div class="cat">Typography</div>
-						</div>
-					</div>
-					<div class="single-portfolio col-sm-4 all photography">
-						<div class="relative">
-							<div class="thumb">
-								<div class="overlay overlay-bg"></div>
-								<img class="image img-fluid" src="images/p6.jpg" alt="">
-							</div>
-							<a href="images/p6.jpg" class="img-pop-up">  
-								<div class="middle">
-									<div class="text align-self-center d-flex"><img src="images/preview.png" alt=""></div>
-								</div>
-							</a>                                
-						</div>
-						<div class="p-inner">
-							<h4>White Space Photography</h4>
-							<div class="cat">photography</div>
-						</div>
-					</div> -->
-				</div>
-				
-			</div>
-			
-		</div>
-	</section>
-	<!-- .section -->
-
-	<!-- Button qismi -->
-					<div class="portfolio-button-container">		
-					 <a href="All_Projects.html" target="_blank" class="portfolio-button">View Full Portfolio</a>
-					  </div>
-	  
-	
-	<section class="site-section " id="section-resume">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 mb-5">
-					<div class="section-heading text-center">
-						<h2>My <strong>Resume</strong></h2>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<h2 class="mb-5">Education</h2>
-					<div class="resume-item mb-4">
-						<span class="date"><span class="icon-calendar"></span>  September 2019 - July 2023</span>
-						<h3>Banking</h3>
-						<p>Focused on finance, banking operations, and economics. Gained a strong foundation in financial analysis and practical skills in the banking sector.</p>
-						<span class="school"><strong><a href="https://www.sies.uz/" target="_blank">Samarkand Institute of Economics and Service</a></strong></span>
-					</div>
-
-					<div class="resume-item mb-4">
-						<span class="date"><span class="icon-calendar"></span>  November 2024 - February 2025</span>
-						<h3>Data Analytics</h3>
-						<p>Focused on data-driven decision-making, statistical analysis, and visualization tools like Excel, SQL, Python, and Power BI. Developed practical skills in analyzing and interpreting complex datasets to support business insights.</p>
-						<span class="school"><strong><a href="https://academy.maab.uz/" target="_blank">MAAB Academy</a></strong></span>
-					</div>
-				</div>
-				<div class="col-md-6">
-
-
-					<h2 class="mb-5">Experience</h2>
-
-					<div class="resume-item mb-4">
-						<span class="date"><span class="icon-calendar"></span> January 2023 - March 2023</span>
-						<h3>Banking Intern</h3>
-						<p>Focused on improving data accuracy and accessibility through systematic document classification and Excel-based logs. Analyzed customer interactions and loan statuses to drive faster issue resolution and enhance reporting processes. Utilized data insights to increase loan repayment efficiency and optimize team collaboration on loan resolution projects.</p>
-						<span class="school"><strong><a href="https://brb.uz/" target="_blank">Biznesni Rivojlantirish Banki</a></strong></span>
-					</div>
-
-					<div class="resume-item mb-4">
-						<span class="date"><span class="icon-calendar"></span> August 2023 - November 2023</span>
-						<h3>Banking Intern</h3>
-						<p>Utilized Excel to track loan repayments and manage customer data, improving loan repayment speed by 60%. Advised 200+ customers, increasing satisfaction by 80%. Managed iABS software for over 80 accounts, ensuring data accuracy and customer service. Retrieved 120+ ATM cards, boosting customer satisfaction by 70%.</p>
-						<span class="school"><strong><a href="https://brb.uz/" target="_blank">Biznesni Rivojlantirish Banki</a></strong></span>
-
-					</div>
-
-					<div class="resume-item mb-4">
-						<span class="date"><span class="icon-calendar"></span> March 2025 - Present</span>
-						<h3>Data Analyst, Support Teacher</h3>
-						<p>Assisted students with SQL, Excel, Python (Pandas, Seaborn), and Power BI. Reviewed code, provided feedback on data cleaning and visualization.</p>
-						<span class="school"><strong><a href="https://it-market.uz/company/5Cjm2RyaagiFPc8zuK7Lsg/" target="_blank">MAAB Innovation</a></strong></span>
-						
-						
-					</div>
-				</div>
-			</div>
-		</div>
-	</section> <!-- .section -->
-
-	<section class="site-section" id="section-about">
-		<div class="container">
-			<div class="row mb-5 align-items-center">
-				<div class="col-lg-7 pr-lg-5 mb-5 mb-lg-0">
-					<img src="images\IMG_1270 (2)_3.JPG" alt="Image placeholder" class="img-fluid">
-				</div>
-				<div class="col-lg-5 pl-lg-5">
-					<div class="section-heading">
-						<h2>About <strong>Me</strong></h2>
-					</div>
-					<p class="lead">I'm a passionate and detail-oriented data analytics enthusiast with a background in banking and finance. I specialize in turning raw data into actionable insights using tools like Excel, SQL, Python, and Power BI.
-						My journey started with a Bachelor's in Banking, followed by hands-on experience as a banking intern and a support teacher in data analytics. I enjoy solving problems, building dashboards, and helping others understand data better.
-						Currently, I'm focused on growing my skills and working on real-world projects that combine analytics with business impact.</p>
-					<p class="mb-5  ">Skilled in SQL, Python (Pandas, Numpy, Matplotlib, SeaBorn, API requests), Power BI</p>
-
-					<p>
-						<a href="#section-contact" class="btn btn-primary px-4 py-2 btn-sm smoothscroll">Hire Me</a>
-						<a href="Ismatov Sardor [Resume] -ENGLISH- PDF.pdf" class="btn btn-secondary px-4 py-2 btn-sm">Download CV</a>
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="site-section" id="section-contact">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 mb-5">
-					<div class="section-heading text-center">
-						<h2>Get <strong>In Touch</strong></h2>
-					</div>
-				</div>
-
-
-				 <div class="col-md-7 mb-5 mb-md-0">
-					<form action="https://formspree.io/f/meoavvar" method="POST" class="site-form" id="contact-form">
-					  <h3 class="mb-5">Get In Touch</h3>
-					  <div class="form-group">
-						<input type="text" name="name" class="form-control px-3 py-4" placeholder="Your Name">
-					  </div>
-					  <div class="form-group">
-						<input type="email" name="email" class="form-control px-3 py-4" placeholder="Your Email">
-					  </div>
-					  <div class="form-group">
-						<input type="tel" name="phone" class="form-control px-3 py-4" placeholder="Your Phone">
-					  </div>
-					  <div class="form-group mb-5">
-						<textarea name="message" class="form-control px-3 py-4" cols="30" rows="10" placeholder="Write a Message"></textarea>
-					  </div>
-					  <div class="form-group">
-						<button type="submit" class="btn btn-primary  px-4 py-3">Send Message</button>
-					  </div>
-					</form>
-				  </div>
-				  
-				  <!-- Pop-up Message -->
-				  <div id="popup-message" class="popup-message" style="display:none;">
-					<div class="popup-content">
-					  <p><strong>Your message has been sent successfully!</strong></p>
-					  <p>I will get back to you shortly.</p>
-					  <button id="close-popup" class="btn btn-secondary">Close</button>
-					</div>
-				  </div>
-				  
-				  <style>.popup-message {
-					position: fixed;
-					top: 50%;
-					left: 50%;
-					transform: translate(-50%, -50%);
-					background-color: #35d15a; /* Green background */
-					color: white;
-					padding: 25px; /* Kattaroq padding */
-					border-radius: 10px;
-					box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-					text-align: center;
-					z-index: 9999;
-					display: none;
-					width: 370px; /* 15% kattaroq qilish uchun kengligini 345px ga o‘zgartirdim */
-					}
-					.popup-content p {
-					margin: 10px 0;
-					}
-					#close-popup {
-					margin-top: 10px;
-					}
-					
-					/* Media query for mobile devices */
-					@media (max-width: 768px) {
-						.popup-message {
-						width: 80%; /* Telefon uchun kenglikni 80% qilib qo'yish */
-						padding: 20px; /* Telefonlarda kichikroq padding */
-						}
-					}
-
-				  </style>
-				  
-				  <script>
-					const form = document.getElementById('contact-form');
-					form.addEventListener('submit', function(event) {
-					  event.preventDefault(); // Sahifa yangilanmasligi uchun
-					  const popupMessage = document.getElementById('popup-message');
-					  form.style.display = 'none'; // Formani yashirish
-					  popupMessage.style.display = 'block'; // Pop-upni ko‘rsatish
-				  
-					  // Forma yuboriladi, lekin boshqa sahifaga o‘tmaydi
-					  const formData = new FormData(form);
-					  fetch(form.action, {
-						method: 'POST',
-						body: formData,
-					  })
-					  .then(response => {
-						// Yuborilganidan so‘ng xabarni ko‘rsatish
-						if (response.ok) {
-						  console.log('Message sent successfully');
-						} else {
-						  console.error('Error sending message');
-						}
-					  })
-					  .catch(error => {
-						console.error('Error:', error);
-					  });
-					});
-				  
-					// Close pop-up when button is clicked
-					document.getElementById('close-popup').addEventListener('click', function() {
-					  document.getElementById('popup-message').style.display = 'none'; // Pop-upni yopish
-					  form.style.display = 'block'; // Formani qayta ko‘rsatish
-					});
-				  </script>
-				  
-
-
-				  
-				<div class="col-md-5 pl-md-5">
-					<h3 class="mb-5">My Contact Details</h3>
-					<ul class="site-contact-details">
-						<li>
-							<span class="text-uppercase">Email</span>
-							Sardorjonumidvich@gmail.com
-						</li>
-						<li>
-							<span class="text-uppercase">Phone</span>
-							+ 998 93 100 65 00 
-						</li>
-						<li>
-							<span class="text-uppercase">Address</span>
-							Tashkent, Uzbekistan <br>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-	<footer class="site-footer">
-		<div class="container">
-
-			<div class="row mb-5">
-				<p class="col-12 text-center">
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-				</p>
-			</div>
-			
-			<div class="row mb-5">
-				<div class="col-md-12 text-center">
-					<p>
-						<a href="https://t.me/Sardor_Umidvich" target="_blank" class="social-item"><span class="icon-telegram"></span></a>
-						<a href="https://www.linkedin.com/in/sardor-ismatov/" target="_blank" class="social-item"><span class="icon-linkedin2"></span></a>
-						<a href="https://www.instagram.com/sardo.me?igsh=MWc4cmExNXF2cTAydw%3D%3D&utm_source=qr" target="_blank" class="social-item"><span class="icon-instagram2"></span></a>
-					</p>
-				</div>
-			</div>
-			
-		</div>
-	</footer>
-
-
-
-
-	<script src="js/vendor/jquery.min.js"></script>
-	<script src="js/vendor/jquery-migrate-3.0.1.min.js"></script>
-	<script src="js/vendor/popper.min.js"></script>
-	<script src="js/vendor/bootstrap.min.js"></script>
-
-	<script src="js/vendor/jquery.easing.1.3.js"></script>
-
-	<script src="js/vendor/jquery.stellar.min.js"></script>
-	<script src="js/vendor/jquery.waypoints.min.js"></script>
-
-	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-	<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-	<script src="js/custom.js"></script>
-
-	<!-- Google Map -->
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    	<script src="js/google-map.js"></script> -->
-
-    </body>
-    </html>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span data-year>2026</span> Sardor Ismatov &middot; Data Analyst, Tashkent</p>
+      <ul class="footer-links">
+        <li><a href="All_Projects.html">Projects</a></li>
+        <li><a href="files/Sardor_Ismatov_Resume.pdf">CV (PDF)</a></li>
+        <li><a href="mailto:sardorjonumidvich@gmail.com">Email</a></li>
+      </ul>
+      <ul class="socials">
+        <li><a class="social-link" href="https://t.me/Sardor_Umidvich" target="_blank" rel="noopener noreferrer" aria-label="Telegram (opens in a new tab)"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 4 3 11.2l6.3 2.3L12 20l3.4-4.2 4.1 3.2L21 4Z"/><path d="m9.3 13.5 7.2-5.2"/></svg></a></li>
+        <li><a class="social-link" href="https://www.linkedin.com/in/sardor-ismatov/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V16M8 7.5v.01M12 16v-5.5M12 13a2.5 2.5 0 0 1 5 0v3"/></svg></a></li>
+        <li><a class="social-link" href="https://github.com/SardorIsmatov" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li>
+        <li><a class="social-link" href="https://www.instagram.com/sardo.me" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in a new tab)"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

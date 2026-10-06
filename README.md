@@ -1,1 +1,41 @@
-# This is my Portfolio Website
+# Sardor Ismatov - Data Analyst Portfolio
+
+Personal portfolio of Sardor Ismatov, a data analyst in Tashkent, Uzbekistan:
+Power BI case studies, SQL projects, experience, education and a contact form.
+
+It is a plain static site (HTML, CSS and a little vanilla JavaScript). There is
+no build step and no framework.
+
+## Structure
+
+```
+index.html                   Home: hero, featured projects, skills, experience, about, contact
+All_Projects.html            All five projects with a Power BI / SQL filter
+Uzbekistan_population.html   Case study: Uzbekistan Population Growth (2010-2023)
+Retail_sales_page.html       Case study: Retail Sales Analysis
+404.html                     Not-found page (served by Cloudflare for unknown URLs)
+assets/css/site.css          The only stylesheet (design tokens, light and dark theme)
+assets/js/site.js            The only script (theme toggle, menu, filter, contact form, embeds)
+assets/img/                  Optimised photo, dashboard screenshots, favicons
+files/                       Downloadable PDFs (CV and population report)
+_redirects                   301 redirects from old file URLs to the new ones
+wrangler.jsonc               Cloudflare Workers static-assets config
+.assetsignore                Repo files that are not published
+```
+
+The contact form posts to Formspree. Analytics use Google tag `G-4Y6XTBYX7K`.
+
+## Deploy
+
+Pushing to `main` triggers Cloudflare Workers Builds, which runs
+`wrangler deploy` with `wrangler.jsonc` and publishes the repository root as
+static assets. Files listed in `.assetsignore` (such as this README and the
+`.docx` resume) are not uploaded.
+
+## Local preview
+
+```
+npx http-server . -p 8080 -c-1
+```
+
+Then open http://localhost:8080.

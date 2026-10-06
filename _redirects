@@ -1,0 +1,7 @@
+# Old public URLs -> new locations (Cloudflare Workers static assets)
+/Ismatov%20Sardor%20%5BResume%5D%20-ENGLISH-%20PDF.pdf  /files/Sardor_Ismatov_Resume.pdf  301
+/Ismatov%20Sardor%20%5BResume%5D%20-%20ENGLISH.pdf  /files/Sardor_Ismatov_Resume.pdf  301
+/Uzbekistan%20Population%20Growth.pdf  /files/Uzbekistan_Population_Growth_Report.pdf  301
+/images/Screenshot%20of%20the%20dashboard.png  /assets/img/uzbekistan-population-dashboard.png  301
+/images/Retail_Sales_Screenshot.png  /assets/img/retail-sales-dashboard.png  301
+/main.html  /  301
