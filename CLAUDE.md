@@ -21,6 +21,7 @@ The owner adds projects and updates content by asking Claude. Read this first; i
 - Current role: BI Engineer at National Bank of Uzbekistan (NBU), Jul 2025 to present.
 - The site must match the CV in `files/Sardor_Ismatov_Resume.pdf` (titles, dates, numbers).
   When the owner sends a new CV, replace that file and re-check the experience section against it.
+  Exception: the 2023 bank internships are deliberately left off the site (owner's request), even if the CV lists them.
 
 ## Add a project
 1. Screenshot (if any): save as `assets/img/<slug>.png` and also make a WebP:

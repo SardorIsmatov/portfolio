@@ -443,19 +443,6 @@ def build_index():
                   <ul class="chips tl-stack" aria-label="Stack"><li class="chip">SSAS</li><li class="chip">SSIS</li><li class="chip">SQL Server</li><li class="chip">MySQL</li><li class="chip">Power BI</li><li class="chip">PBIRS</li></ul>
                 </article>
               </li>
-              <li class="tl-item reveal">
-                <article class="card tl-card">
-                  <div class="tl-top"><span class="tl-date">Aug 2023 &ndash; Nov 2023</span><span class="tl-date">Bukhara</span></div>
-                  <h4>Intern</h4>
-                  <p class="tl-org"><a href="https://brb.uz/" target="_blank" rel="noopener noreferrer">Biznesni Rivojlantirish Banki{NEWTAB}</a> &middot; Karakul region bank services office</p>
-                  <ul class="tl-list">
-                    <li>Analysed and contacted 400+ borrowers with missed loan payments, using data insights to speed up repayment by 30%.</li>
-                    <li>Gave 200+ clients data-driven information on deposit types, interest rates and loan options.</li>
-                    <li>Managed iABS data for 80+ client accounts, keeping credit histories accurate.</li>
-                    <li>Used advanced Excel (IFS, VLOOKUP, HLOOKUP, XLOOKUP, INDEX + MATCH) to track loan repayments, analyse payment schedules and manage outstanding debts and account details.</li>
-                  </ul>
-                </article>
-              </li>
             </ol>
           </div>
           <div>
@@ -494,7 +481,7 @@ def build_index():
         <div class="about-grid">
           <div class="about-text">
             <p>I&rsquo;m a BI engineer and data analyst with a background in banking and finance. Since July 2025 I&rsquo;ve been building the BI pipeline at National Bank of Uzbekistan: ETL in Apache Airflow, SQL on Oracle and SAP HANA, and Power BI reporting for around 100 users, including senior management.</p>
-            <p>My journey started with a Bachelor&rsquo;s in Banking and a banking internship. Before NBU I worked as a BI analyst for OFB Bank through MAAB Innovation, building data models and more than 150 pages of Power BI reports. I enjoy solving problems, building dashboards and helping others understand data better.</p>
+            <p>My journey started with a Bachelor&rsquo;s in Banking. Before NBU I worked as a BI analyst for OFB Bank through MAAB Innovation, building data models and more than 150 pages of Power BI reports. I enjoy solving problems, building dashboards and helping others understand data better.</p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="#contact">Get in touch {icon("arrow-right")}</a>
               <a class="btn btn-secondary" href="{CV}" download="Sardor_Ismatov_Resume.pdf">{icon("download")} Download CV</a>
