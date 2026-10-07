@@ -1,6 +1,6 @@
-# Sardor Ismatov - BI Developer & Data Analyst Portfolio
+# Sardor Ismatov - BI Engineer & Data Analyst Portfolio
 
-Personal portfolio of Sardor Ismatov, a BI developer and data analyst in Tashkent, Uzbekistan:
+Personal portfolio of Sardor Ismatov, a BI engineer and data analyst in Tashkent, Uzbekistan:
 Power BI case studies, SQL projects, experience, education and a contact form.
 
 It is a plain static site (HTML, CSS and a little vanilla JavaScript), with no
@@ -21,6 +21,7 @@ assets/js/site.js            The only script (theme toggle, menu, filter, contac
 assets/img/                  Optimised photo, dashboard screenshots, favicons
 files/                       Downloadable PDFs (CV and population report)
 _redirects                   301 redirects from old file URLs to the new ones
+vercel.json                  Redirects the old Vercel site to the Cloudflare one
 wrangler.jsonc               Cloudflare Workers static-assets config
 .assetsignore                Repo files that are not published
 tools/build.py               Generates the HTML pages (content lives here)

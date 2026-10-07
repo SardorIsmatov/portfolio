@@ -151,7 +151,7 @@ def header(page, base=""):
       <a class="brand" href="{brand_href}" aria-label="Sardor Ismatov, home">
         <span class="brand-mark" aria-hidden="true">SI</span>
         <span class="brand-name">Sardor Ismatov</span>
-        <span class="brand-role">BI Developer</span>
+        <span class="brand-role">BI Engineer</span>
       </a>
       <nav class="site-nav" id="site-nav" aria-label="Main">
         <ul class="nav-list">
@@ -182,7 +182,7 @@ def footer(base=""):
     soc = textwrap.indent(socials_list(), " " * 6)
     return f"""  <footer class="site-footer">
     <div class="container footer-inner">
-      <p>&copy; <span data-year>2026</span> Sardor Ismatov &middot; BI Developer, Tashkent</p>
+      <p>&copy; <span data-year>2026</span> Sardor Ismatov &middot; BI Engineer, Tashkent</p>
       <ul class="footer-links">
         <li><a href="{base}All_Projects.html">Projects</a></li>
         <li><a href="{base}{CV}">CV (PDF)</a></li>
@@ -299,8 +299,8 @@ def build_index():
           <li><a class="contact-item" href="tel:{PHONE_TEL}"><span class="contact-ico">{icon("phone")}</span><span><small>Phone</small><span>{PHONE.replace(" ", "&nbsp;")}</span></span></a></li>
           <li><div class="contact-item"><span class="contact-ico">{icon("pin")}</span><span><small>Location</small><span>Tashkent, Uzbekistan</span></span></div></li>"""
 
-    html = head("Sardor Ismatov | BI Developer &amp; Data Analyst",
-                "Sardor Ismatov, BI developer and data analyst at National Bank of Uzbekistan in Tashkent. ETL with Apache Airflow, SQL on Oracle and SAP HANA, Power BI dashboards and projects.",
+    html = head("Sardor Ismatov | BI Engineer &amp; Data Analyst",
+                "Sardor Ismatov, BI engineer and data analyst at National Bank of Uzbekistan in Tashkent. ETL with Apache Airflow, SQL on Oracle and SAP HANA, Power BI dashboards and projects.",
                 "assets/img/sardor-ismatov-og.jpg")
     html += "\n" + header("home")
     html += f"""
@@ -309,7 +309,7 @@ def build_index():
       <div class="container hero-grid">
         <div>
           <p class="eyebrow">Portfolio</p>
-          <h1 class="hero-title" id="hero-title">Sardor Ismatov <span class="role"><span class="nowrap">BI Developer</span> <span class="nowrap">&amp; Data Analyst</span></span></h1>
+          <h1 class="hero-title" id="hero-title">Sardor Ismatov <span class="role"><span class="nowrap">BI Engineer</span> <span class="nowrap">&amp; Data Analyst</span></span></h1>
           <p class="hero-lead">I build and run the BI pipeline at National Bank of Uzbekistan: Airflow ETL into an Oracle data warehouse, SQL on Oracle and SAP HANA, and Power BI reports used by about 100 people, including senior management.</p>
           <ul class="chips" aria-label="Main tools">
             <li class="chip chip-accent">Python</li>
@@ -337,7 +337,7 @@ def build_index():
           </div>
           <div class="portrait-badge">
             <span class="badge-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-            <div><strong>BI Developer</strong><span>National Bank of Uzbekistan &middot; since Jul 2025</span></div>
+            <div><strong>BI Engineer</strong><span>National Bank of Uzbekistan &middot; since Jul 2025</span></div>
           </div>
         </div>
       </div>
@@ -347,7 +347,7 @@ def build_index():
       <ul class="facts" aria-label="Quick facts">
         <li class="fact"><span class="fact-value">~100</span><span class="fact-label">report users at NBU</span></li>
         <li class="fact"><span class="fact-value">5</span><span class="fact-label">source systems in the ETL</span></li>
-        <li class="fact"><span class="fact-value">3</span><span class="fact-label">public Power BI dashboards</span></li>
+        <li class="fact"><span class="fact-value">150+</span><span class="fact-label">Power BI report pages for OFB Bank</span></li>
         <li class="fact"><span class="fact-value">C1</span><span class="fact-label">IELTS English</span></li>
       </ul>
     </div>
@@ -380,17 +380,17 @@ def build_index():
           <li class="card skill-card reveal">
             <div class="skill-head"><span class="skill-icon">{icon("flow")}</span><h3>Data engineering &amp; ETL</h3></div>
             <p>Airflow DAGs in Python that move data from several source systems into an Oracle data warehouse.</p>
-            <ul class="chips"><li class="chip">Python</li><li class="chip">Apache Airflow</li><li class="chip">oracledb</li><li class="chip">hdbcli</li><li class="chip">pyodbc</li><li class="chip">SAP Data Services</li></ul>
+            <ul class="chips"><li class="chip">Python</li><li class="chip">Apache Airflow</li><li class="chip">oracledb</li><li class="chip">hdbcli</li><li class="chip">pyodbc</li><li class="chip">SQLAlchemy</li><li class="chip">SSIS</li><li class="chip">SAP Data Services</li></ul>
           </li>
           <li class="card skill-card reveal">
             <div class="skill-head"><span class="skill-icon">{icon("database")}</span><h3>Databases &amp; SQL</h3></div>
             <p>Complex, optimised SQL, data modelling and reporting marts.</p>
-            <ul class="chips"><li class="chip">Oracle</li><li class="chip">SAP HANA</li><li class="chip">SQL Server</li><li class="chip">PostgreSQL</li><li class="chip">Data modelling</li></ul>
+            <ul class="chips"><li class="chip">Oracle PL/SQL</li><li class="chip">SAP HANA</li><li class="chip">ClickHouse</li><li class="chip">SQL Server</li><li class="chip">PostgreSQL</li><li class="chip">MySQL</li><li class="chip">Window functions &amp; CTEs</li></ul>
           </li>
           <li class="card skill-card reveal">
             <div class="skill-head"><span class="skill-icon">{icon("chart")}</span><h3>BI &amp; reporting</h3></div>
             <p>Power BI dashboards and DAX measures, published to the business on Power BI Report Server.</p>
-            <ul class="chips"><li class="chip">Power BI</li><li class="chip">DAX</li><li class="chip">Power BI Report Server</li><li class="chip">Drill-through</li><li class="chip">Excel</li></ul>
+            <ul class="chips"><li class="chip">Power BI</li><li class="chip">DAX</li><li class="chip">Power BI Report Server</li><li class="chip">SSAS (Tabular)</li><li class="chip">Excel</li></ul>
           </li>
           <li class="card skill-card reveal">
             <div class="skill-head"><span class="skill-icon">{icon("code")}</span><h3>Analysis in Python</h3></div>
@@ -417,7 +417,7 @@ def build_index():
               <li class="tl-item is-current reveal">
                 <article class="card tl-card">
                   <div class="tl-top"><span class="tl-date">Jul 2025 &ndash; Present<span class="tl-now">Current</span></span><span class="tl-date">Tashkent</span></div>
-                  <h4>BI Developer</h4>
+                  <h4>BI Engineer</h4>
                   <p class="tl-org"><a href="https://nbu.uz/" target="_blank" rel="noopener noreferrer">National Bank of Uzbekistan (NBU){NEWTAB}</a></p>
                   <p class="tl-text">I build and maintain the bank&rsquo;s BI pipeline end to end, working largely solo across every layer.</p>
                   <ul class="tl-list">
@@ -426,18 +426,21 @@ def build_index():
                     <li><strong>Reporting:</strong> Power BI dashboards and DAX measures for the credit portfolio, loan disbursement, regulatory liquidity (VLA/HLA), branch financial monitoring and market benchmarking.</li>
                     <li><strong>Platform administration:</strong> deployed and administer Power BI Report Server for ~100 users, including senior management, and built a custom web tool for managing report permissions.</li>
                   </ul>
-                  <ul class="chips tl-stack" aria-label="Stack"><li class="chip">Python</li><li class="chip">Apache Airflow</li><li class="chip">Oracle</li><li class="chip">SAP HANA</li><li class="chip">SQL Server</li><li class="chip">Power BI / DAX</li><li class="chip">PBIRS</li></ul>
+                  <ul class="chips tl-stack" aria-label="Stack"><li class="chip">Python</li><li class="chip">Apache Airflow</li><li class="chip">Oracle (PL/SQL)</li><li class="chip">SAP HANA</li><li class="chip">ClickHouse</li><li class="chip">SQL Server</li><li class="chip">Power BI / DAX</li><li class="chip">PBIRS</li></ul>
                 </article>
               </li>
               <li class="tl-item reveal">
                 <article class="card tl-card">
-                  <div class="tl-top"><span class="tl-date">Mar 2025 &ndash; Jul 2025</span><span class="tl-date">Tashkent</span></div>
-                  <h4>Data Analyst (Support Teacher)</h4>
-                  <p class="tl-org"><a href="https://it-market.uz/company/5Cjm2RyaagiFPc8zuK7Lsg/" target="_blank" rel="noopener noreferrer">MAAB Innovation{NEWTAB}</a></p>
+                  <div class="tl-top"><span class="tl-date">Feb 2025 &ndash; Jul 2025</span><span class="tl-date">Tashkent</span></div>
+                  <h4>Data Analyst</h4>
+                  <p class="tl-org"><a href="https://it-market.uz/company/5Cjm2RyaagiFPc8zuK7Lsg/" target="_blank" rel="noopener noreferrer">MAAB Innovation{NEWTAB}</a> &middot; outsourced to OFB Bank</p>
                   <ul class="tl-list">
-                    <li>Supported students in data analytics projects with SQL, Excel, Python (Pandas, Seaborn) and Power BI.</li>
-                    <li>Debugged code, reviewed submissions and gave feedback on data cleaning and visualization.</li>
+                    <li>Worked as a BI analyst for OFB Bank through the outsourcing company MAAB Innovation, supporting enterprise-level analytics and reporting.</li>
+                    <li>Developed and maintained data models with SSAS, SSIS, SQL Server and MySQL for strategic analytics and reporting.</li>
+                    <li>Designed and built interactive Power BI dashboards (150+ report pages) on Power BI Report Server to monitor KPIs and speed up decision-making.</li>
+                    <li>Contributed to a full-scale Power BI reporting solution for the bank, improving reporting automation across departments.</li>
                   </ul>
+                  <ul class="chips tl-stack" aria-label="Stack"><li class="chip">SSAS</li><li class="chip">SSIS</li><li class="chip">SQL Server</li><li class="chip">MySQL</li><li class="chip">Power BI</li><li class="chip">PBIRS</li></ul>
                 </article>
               </li>
               <li class="tl-item reveal">
@@ -446,23 +449,10 @@ def build_index():
                   <h4>Intern</h4>
                   <p class="tl-org"><a href="https://brb.uz/" target="_blank" rel="noopener noreferrer">Biznesni Rivojlantirish Banki{NEWTAB}</a> &middot; Karakul region bank services office</p>
                   <ul class="tl-list">
-                    <li>Tracked loan repayment progress in Excel and contacted 400+ loan defaulters by phone, contributing to a 60% faster repayment process.</li>
-                    <li>Advised 200+ customers on deposits, interest rates and loans (customer satisfaction +80%).</li>
-                    <li>Managed 80+ customer accounts in iABS.</li>
-                    <li>Retrieved 120+ ATM cards (customer satisfaction +70%).</li>
-                  </ul>
-                </article>
-              </li>
-              <li class="tl-item reveal">
-                <article class="card tl-card">
-                  <div class="tl-top"><span class="tl-date">Jan 2023 &ndash; Mar 2023</span><span class="tl-date">Bukhara</span></div>
-                  <h4>Intern</h4>
-                  <p class="tl-org"><a href="https://brb.uz/" target="_blank" rel="noopener noreferrer">Biznesni Rivojlantirish Banki{NEWTAB}</a> &middot; Bukhara city branch</p>
-                  <ul class="tl-list">
-                    <li>Organised the document archive and kept Excel logs of customer interactions and loan statuses.</li>
-                    <li>Assisted 400+ customers, resolving issues twice as fast.</li>
-                    <li>Contacted 200+ loan defaulters, speeding up the repayment process by 40%.</li>
-                    <li>Joined field visits on problem loans (+30% efficiency).</li>
+                    <li>Analysed and contacted 400+ borrowers with missed loan payments, using data insights to speed up repayment by 30%.</li>
+                    <li>Gave 200+ clients data-driven information on deposit types, interest rates and loan options.</li>
+                    <li>Managed iABS data for 80+ client accounts, keeping credit histories accurate.</li>
+                    <li>Used advanced Excel (IFS, VLOOKUP, HLOOKUP, XLOOKUP, INDEX + MATCH) to track loan repayments, analyse payment schedules and manage outstanding debts and account details.</li>
                   </ul>
                 </article>
               </li>
@@ -503,8 +493,8 @@ def build_index():
         </div>
         <div class="about-grid">
           <div class="about-text">
-            <p>I&rsquo;m a BI developer and data analyst with a background in banking and finance. Since July 2025 I&rsquo;ve been building the BI pipeline at National Bank of Uzbekistan: ETL in Apache Airflow, SQL on Oracle and SAP HANA, and Power BI reporting for around 100 users, including senior management.</p>
-            <p>My journey started with a Bachelor&rsquo;s in Banking, followed by banking internships and a role as a support teacher in data analytics. I enjoy solving problems, building dashboards and helping others understand data better.</p>
+            <p>I&rsquo;m a BI engineer and data analyst with a background in banking and finance. Since July 2025 I&rsquo;ve been building the BI pipeline at National Bank of Uzbekistan: ETL in Apache Airflow, SQL on Oracle and SAP HANA, and Power BI reporting for around 100 users, including senior management.</p>
+            <p>My journey started with a Bachelor&rsquo;s in Banking and a banking internship. Before NBU I worked as a BI analyst for OFB Bank through MAAB Innovation, building data models and more than 150 pages of Power BI reports. I enjoy solving problems, building dashboards and helping others understand data better.</p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="#contact">Get in touch {icon("arrow-right")}</a>
               <a class="btn btn-secondary" href="{CV}" download="Sardor_Ismatov_Resume.pdf">{icon("download")} Download CV</a>
@@ -516,7 +506,6 @@ def build_index():
               <ul class="cert-list">
                 <li><div><strong>IELTS C1</strong></div><span class="year">2023</span></li>
                 <li><div><strong>Microsoft Excel &ndash; Excel from Beginner to Advanced</strong><span>Udemy</span></div><span class="year">2024</span></li>
-                <li><div><strong>Google Data Analytics: Foundations</strong><span>Coursera</span></div><span class="year">2024</span></li>
               </ul>
             </div>
             <div class="card info-card reveal">
@@ -594,7 +583,7 @@ def build_all():
     cards = "\n".join(project_card(p, hl="h2") for p in PROJECTS)
     n_pbi = sum(1 for p in PROJECTS if p["type"] == "powerbi")
     n_sql = sum(1 for p in PROJECTS if p["type"] == "sql")
-    html = head("Projects | Sardor Ismatov, BI Developer",
+    html = head("Projects | Sardor Ismatov, BI Engineer",
                 "All data analytics projects by Sardor Ismatov: Power BI dashboards on population and retail sales data, and SQL projects.",
                 "assets/img/uzbekistan-population-dashboard.png")
     html += "\n" + header("projects")
@@ -894,7 +883,7 @@ CASES = {
 
 def build_404():
     html = head("Page not found | Sardor Ismatov",
-                "This page does not exist. Go back to the portfolio of Sardor Ismatov, BI developer and data analyst.",
+                "This page does not exist. Go back to the portfolio of Sardor Ismatov, BI engineer and data analyst.",
                 "assets/img/sardor-ismatov-og.jpg", base="/")
     html += "\n" + header("404", base="/")
     html += f"""

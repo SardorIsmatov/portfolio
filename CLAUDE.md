@@ -8,6 +8,7 @@ The owner adds projects and updates content by asking Claude. Read this first; i
 - `.assetsignore` keeps non-site files (this file, `tools/`, README, `.docx`, config) off the public site.
   Anything new that is not part of the site must be added there.
 - `_redirects` keeps old public URLs (old PDF names) working. Do not remove its rules.
+- `vercel.json` makes the old Vercel site (sardorismatov.vercel.app) redirect every path here, so old links keep working.
 - The five pages (`index.html`, `All_Projects.html`, `Uzbekistan_population.html`,
   `Retail_sales_page.html`, `404.html`) are **generated** by `tools/build.py`.
   Edit the generator, then run `python3 tools/build.py`. Never hand-edit the HTML: it is overwritten.
@@ -17,7 +18,9 @@ The owner adds projects and updates content by asking Claude. Read this first; i
 ## Content rules
 - Only publish facts the owner gave (CV, messages). Never invent metrics, employers, dates or results.
 - The Uzbekistan population numbers come from the owner's dashboard; do not change them unless asked.
-- Current role: BI Developer at National Bank of Uzbekistan (NBU), Jul 2025 to present.
+- Current role: BI Engineer at National Bank of Uzbekistan (NBU), Jul 2025 to present.
+- The site must match the CV in `files/Sardor_Ismatov_Resume.pdf` (titles, dates, numbers).
+  When the owner sends a new CV, replace that file and re-check the experience section against it.
 
 ## Add a project
 1. Screenshot (if any): save as `assets/img/<slug>.png` and also make a WebP:
@@ -28,8 +31,7 @@ The owner adds projects and updates content by asking Claude. Read this first; i
 3. Full case study page: append to `PROJECTS` with `page="<File>.html"`, `img=(slug, width, height, alt)`
    and `dash=<Power BI URL>`; add a matching entry to `CASES` (copy an existing one: KPIs, body HTML,
    prev/next links). New page filenames must keep working links from the other pages' prev/next.
-4. Update counts that mention projects (facts strip "public Power BI dashboards" in `build_index`,
-   projects page intro in `build_all`).
+4. Update counts that mention projects (projects page intro in `build_all`, the "Case studies" lead in `build_index`).
 5. Regenerate and check before pushing:
    - `python3 tools/build.py`
    - every local href/src resolves, one h1 per page
