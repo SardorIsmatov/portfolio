@@ -332,7 +332,7 @@ def build_index():
           <div class="portrait-frame">
             <picture>
               <source srcset="assets/img/sardor-ismatov.webp" type="image/webp">
-              <img src="assets/img/sardor-ismatov.jpg" width="720" height="900" alt="Portrait of Sardor Ismatov" fetchpriority="high" decoding="async">
+              <img src="assets/img/sardor-ismatov.jpg" width="960" height="1200" alt="Portrait of Sardor Ismatov" fetchpriority="high" decoding="async">
             </picture>
           </div>
           <div class="portrait-badge">
