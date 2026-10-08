@@ -35,9 +35,8 @@ The owner adds projects and updates content by asking Claude. Read this first; i
 4. Update counts that mention projects (projects page intro in `build_all`, the "Case studies" lead in `build_index`).
    The homepage features every project with a `page`; the first one in `PROJECTS` gets the wide card, so put the newest first
    and fix the prev/next links of the neighbouring case pages.
-   Note: `assets/img/bank-pnl-dashboard.png` is an illustrated cover, not a screenshot (Power BI is unreachable from the
-   sandbox). When the owner sends a real screenshot, save it under the same name (1600x940, crop if needed), regenerate
-   the WebP, and change `poster_note` and the `img` alt text for that case.
+   Screenshots: Power BI is unreachable from the sandbox, so ask the owner for one. Crop to 1600x940 (the card ratio),
+   save WebP, and keep the PNG fallback under ~400 KB (a 256-colour palette works well for dashboards).
 5. Regenerate and check before pushing:
    - `python3 tools/build.py`
    - every local href/src resolves, one h1 per page
