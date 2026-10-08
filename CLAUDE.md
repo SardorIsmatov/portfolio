@@ -9,7 +9,7 @@ The owner adds projects and updates content by asking Claude. Read this first; i
   Anything new that is not part of the site must be added there.
 - `_redirects` keeps old public URLs (old PDF names) working. Do not remove its rules.
 - `vercel.json` makes the old Vercel site (sardorismatov.vercel.app) redirect every path here, so old links keep working.
-- The five pages (`index.html`, `All_Projects.html`, `Uzbekistan_population.html`,
+- The pages (`index.html`, `All_Projects.html`, `Bank_PnL_performance.html`, `Uzbekistan_population.html`,
   `Retail_sales_page.html`, `404.html`) are **generated** by `tools/build.py`.
   Edit the generator, then run `python3 tools/build.py`. Never hand-edit the HTML: it is overwritten.
 - Styles: `assets/css/site.css` (design tokens at the top; light theme is the default, dark only via the toggle).
@@ -33,6 +33,11 @@ The owner adds projects and updates content by asking Claude. Read this first; i
    and `dash=<Power BI URL>`; add a matching entry to `CASES` (copy an existing one: KPIs, body HTML,
    prev/next links). New page filenames must keep working links from the other pages' prev/next.
 4. Update counts that mention projects (projects page intro in `build_all`, the "Case studies" lead in `build_index`).
+   The homepage features every project with a `page`; the first one in `PROJECTS` gets the wide card, so put the newest first
+   and fix the prev/next links of the neighbouring case pages.
+   Note: `assets/img/bank-pnl-dashboard.png` is an illustrated cover, not a screenshot (Power BI is unreachable from the
+   sandbox). When the owner sends a real screenshot, save it under the same name (1600x940, crop if needed), regenerate
+   the WebP, and change `poster_note` and the `img` alt text for that case.
 5. Regenerate and check before pushing:
    - `python3 tools/build.py`
    - every local href/src resolves, one h1 per page

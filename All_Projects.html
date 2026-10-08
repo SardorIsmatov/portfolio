@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projects | Sardor Ismatov, BI Engineer</title>
-  <meta name="description" content="All data analytics projects by Sardor Ismatov: Power BI dashboards on population and retail sales data, and SQL projects.">
+  <meta name="description" content="All data analytics projects by Sardor Ismatov: Power BI dashboards on bank P&amp;L, population and retail sales data, and SQL projects.">
   <meta name="author" content="Sardor Ismatov">
   <meta name="theme-color" content="#ffffff">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Sardor Ismatov">
   <meta property="og:title" content="Projects | Sardor Ismatov, BI Engineer">
-  <meta property="og:description" content="All data analytics projects by Sardor Ismatov: Power BI dashboards on population and retail sales data, and SQL projects.">
-  <meta property="og:image" content="https://portfolio.sardorjonumidvich.workers.dev/assets/img/uzbekistan-population-dashboard.png">
+  <meta property="og:description" content="All data analytics projects by Sardor Ismatov: Power BI dashboards on bank P&amp;L, population and retail sales data, and SQL projects.">
+  <meta property="og:image" content="https://portfolio.sardorjonumidvich.workers.dev/assets/img/bank-pnl-dashboard.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/img/favicon-48.png" sizes="48x48" type="image/png">
@@ -76,17 +76,28 @@
         </ol>
       </nav>
       <h1 class="page-title">Projects</h1>
-      <p class="page-lead">Power BI dashboards and SQL work. The first two have full case studies; the others open the dashboard or the code on GitHub.</p>
+      <p class="page-lead">Power BI dashboards and SQL work. The first three have full case studies; the others open the dashboard or the code on GitHub.</p>
     </div>
 
     <section class="container" aria-label="Project list" style="padding-bottom: clamp(56px, 8vw, 96px);">
       <div class="filters" data-filters role="group" aria-label="Filter projects" hidden>
-        <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All <span class="count">5</span></button>
-        <button class="filter-btn" type="button" data-filter="powerbi" aria-pressed="false"><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20h16M7 16v-5M12 16V7M17 16v-8"/></svg> Power BI <span class="count">3</span></button>
+        <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All <span class="count">6</span></button>
+        <button class="filter-btn" type="button" data-filter="powerbi" aria-pressed="false"><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20h16M7 16v-5M12 16V7M17 16v-8"/></svg> Power BI <span class="count">4</span></button>
         <button class="filter-btn" type="button" data-filter="sql" aria-pressed="false"><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg> SQL <span class="count">2</span></button>
       </div>
       <p class="visually-hidden" data-filter-status aria-live="polite"></p>
       <ul class="project-grid">
+        <li class="reveal" data-type="powerbi">
+          <article class="project-card">
+            <a class="project-media" href="Bank_PnL_performance.html" tabindex="-1" aria-hidden="true"><picture><source srcset="assets/img/bank-pnl-dashboard.webp" type="image/webp"><img src="assets/img/bank-pnl-dashboard.png" width="1600" height="940" alt="Illustrated cover of the Bank P&amp;L Performance dashboard: a profit waterfall from interest income to net profit, period and plan switches, and KPI sparklines" loading="lazy" decoding="async"></picture></a>
+            <div class="project-body">
+              <h2 class="project-title"><a href="Bank_PnL_performance.html">Bank P&amp;L Performance Dashboard</a></h2>
+              <p class="project-desc">Executive Power BI dashboard for a fictional bank (synthetic data): monthly profit against plan and last year, what drove it and where risk is building.</p>
+              <ul class="chips" aria-label="Tools"><li class="chip">Power BI</li><li class="chip">DAX</li><li class="chip">Deneb</li><li class="chip">Python</li></ul>
+              <div class="project-actions"><a class="btn btn-primary btn-sm" href="Bank_PnL_performance.html">Case study <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-ghost btn-sm" href="https://app.powerbi.com/view?r=eyJrIjoiNDU1MTg1YTAtNGUyYS00ZjcwLWE1YTctNzhiNDU5ZjJlOTY0IiwidCI6ImY3YjQ5MjU0LTMxZmYtNDVkZS04NGJkLTEyMDczYzcyZDMzMSIsImMiOjEwfQ%3D%3D" target="_blank" rel="noopener noreferrer">Open dashboard<span class="visually-hidden"> (opens in a new tab)</span><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></div>
+            </div>
+          </article>
+        </li>
         <li class="reveal" data-type="powerbi">
           <article class="project-card">
             <a class="project-media" href="Uzbekistan_population.html" tabindex="-1" aria-hidden="true"><picture><source srcset="assets/img/uzbekistan-population-dashboard.webp" type="image/webp"><img src="assets/img/uzbekistan-population-dashboard.png" width="1409" height="830" alt="Uzbekistan Population Growth dashboard in Power BI with KPI cards, population over time, year-over-year change and the most populated districts" loading="lazy" decoding="async"></picture></a>

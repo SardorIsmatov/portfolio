@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bank P&amp;L Performance Dashboard | Sardor Ismatov</title>
+  <meta name="description" content="Power BI case study by Sardor Ismatov: an executive P&amp;L dashboard for a fictional bank (synthetic data) comparing monthly profit with plan and last year, its drivers and the build-up of credit risk.">
+  <meta name="author" content="Sardor Ismatov">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sardor Ismatov">
+  <meta property="og:title" content="Bank P&amp;L Performance Dashboard | Sardor Ismatov">
+  <meta property="og:description" content="Power BI case study by Sardor Ismatov: an executive P&amp;L dashboard for a fictional bank (synthetic data) comparing monthly profit with plan and last year, its drivers and the build-up of credit risk.">
+  <meta property="og:image" content="https://portfolio.sardorjonumidvich.workers.dev/assets/img/bank-pnl-dashboard.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-48.png" sizes="48x48" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script>
+    (function () {
+      var d = document.documentElement;
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "light" || t === "dark") d.setAttribute("data-theme", t);
+      } catch (e) {}
+      d.className += " js";
+    })();
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4Y6XTBYX7K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4Y6XTBYX7K');
+  </script>
+  <script src="assets/js/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Sardor Ismatov, home">
+        <span class="brand-mark" aria-hidden="true">SI</span>
+        <span class="brand-name">Sardor Ismatov</span>
+        <span class="brand-role">BI Engineer</span>
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="All_Projects.html" aria-current="page">Projects</a></li>
+          <li><a class="nav-link" href="index.html#experience">Experience</a></li>
+          <li><a class="nav-link" href="index.html#about">About</a></li>
+          <li><a class="nav-link" href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Toggle colour theme">
+        <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg><svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5Z"/></svg>
+      </button>
+      <button class="icon-btn menu-toggle" type="button" data-menu-toggle aria-controls="site-nav" aria-expanded="false" aria-label="Open menu">
+        <svg class="icon icon-open" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container page-head">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="All_Projects.html">Projects</a></li>
+          <li><span aria-current="page">Bank P&amp;L Performance</span></li>
+        </ol>
+      </nav>
+      <p class="eyebrow" style="margin-top: 24px;">Case study &middot; Power BI</p>
+      <h1 class="page-title">Bank P&amp;L Performance Dashboard</h1>
+      <p class="page-lead">An executive Power BI dashboard (fictional bank, synthetic data) that explains a commercial bank&rsquo;s monthly profit and loss against plan and against last year &mdash; what drove the result, and where the risk is building.</p>
+      <dl class="meta-row">
+        <div><dt>Category</dt><dd>Financial Analysis &middot; Banking</dd></div>
+        <div><dt>Type</dt><dd>Portfolio project</dd></div>
+        <div><dt>Date</dt><dd>October 2026</dd></div>
+        <div><dt>Tools</dt><dd>Power BI, DAX, Deneb (Vega-Lite), Python</dd></div>
+      </dl>
+    </div>
+
+    <section class="container" aria-labelledby="kpi-title">
+      <h2 class="visually-hidden" id="kpi-title">Key figures</h2>
+      <ul class="kpis">
+          <li class="kpi"><span class="kpi-value">₽34.8B</span><span class="kpi-label">Net profit</span></li>
+          <li class="kpi"><span class="kpi-value">+3.6%</span><span class="kpi-label">Net profit vs plan</span></li>
+          <li class="kpi"><span class="kpi-value">18.1%</span><span class="kpi-label">Return on equity</span></li>
+          <li class="kpi"><span class="kpi-value">5.5%</span><span class="kpi-label">Net interest margin</span></li>
+          <li class="kpi"><span class="kpi-value">42.7%</span><span class="kpi-label">Cost-to-income ratio</span></li>
+          <li class="kpi"><span class="kpi-value">1.50%</span><span class="kpi-label">Cost of risk</span></li>
+      </ul>
+      <p class="kpi-note">Key figures for 12 months, Oct 2025 &ndash; Sep 2026.</p>
+    </section>
+
+    <section class="container dash" id="dashboard" aria-labelledby="dash-title">
+      <div class="dash-bar">
+        <h2 id="dash-title"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/></svg> Interactive dashboard</h2>
+        <div class="dash-links">
+          <a class="btn btn-ghost btn-sm" href="https://app.powerbi.com/view?r=eyJrIjoiNDU1MTg1YTAtNGUyYS00ZjcwLWE1YTctNzhiNDU5ZjJlOTY0IiwidCI6ImY3YjQ5MjU0LTMxZmYtNDVkZS04NGJkLTEyMDczYzcyZDMzMSIsImMiOjEwfQ%3D%3D" target="_blank" rel="noopener noreferrer">Open in new tab<span class="visually-hidden"> (opens in a new tab)</span><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>
+        </div>
+      </div>
+      <div class="dash-frame">
+        <div class="dash-embed" style="background-image: url('assets/img/bank-pnl-dashboard.webp');">
+          <iframe title="Bank P&amp;L Performance, interactive Power BI dashboard" data-src="https://app.powerbi.com/view?r=eyJrIjoiNDU1MTg1YTAtNGUyYS00ZjcwLWE1YTctNzhiNDU5ZjJlOTY0IiwidCI6ImY3YjQ5MjU0LTMxZmYtNDVkZS04NGJkLTEyMDczYzcyZDMzMSIsImMiOjEwfQ%3D%3D" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="dash-poster">
+          <picture><source srcset="assets/img/bank-pnl-dashboard.webp" type="image/webp"><img src="assets/img/bank-pnl-dashboard.png" width="1600" height="940" alt="Illustrated cover of the Bank P&amp;L Performance dashboard: a profit waterfall from interest income to net profit, period and plan switches, and KPI sparklines" fetchpriority="high" decoding="async"></picture>
+          <div class="dash-poster-cta">
+            <p>Illustrated preview. The live report is interactive.</p>
+            <a class="btn btn-primary" href="https://app.powerbi.com/view?r=eyJrIjoiNDU1MTg1YTAtNGUyYS00ZjcwLWE1YTctNzhiNDU5ZjJlOTY0IiwidCI6ImY3YjQ5MjU0LTMxZmYtNDVkZS04NGJkLTEyMDczYzcyZDMzMSIsImMiOjEwfQ%3D%3D" target="_blank" rel="noopener noreferrer">Open interactive dashboard<span class="visually-hidden"> (opens in a new tab)</span><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="callout">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3Z"/></svg>
+        <div>
+          <strong>Quick tip: everything on the page is driven by two switches in the header</strong>
+          <ol>
+            <li><span lang="ru">Месяц / Квартал / С начала года</span> &mdash; show the selected month, the quarter to date, or the year to date.</li>
+            <li><span lang="ru">План / Прошлый год</span> &mdash; compare against the budget or against the same period last year.</li>
+          </ol>
+          <p>Every figure, the waterfall, the driver ranking and the one-line summary under the headline update together.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="container case-layout">
+      <article class="prose">
+        <section>
+          <h2>Project overview</h2>
+          <p>The dashboard answers the question a bank&rsquo;s management asks every month: did we make the profit we planned, and why not? It is built for a mid-sized commercial bank operating in a high key-rate environment. The page opens on a single headline &mdash; net profit for the period and its gap to plan &mdash; and then breaks that gap down step by step: from interest income to net profit, by line item, by driver and over time. The interface is in Russian, as it would be for the bank&rsquo;s own management team.</p>
+          <p>The dataset is synthetic: 12 months of actual, plan and prior-year P&amp;L, plus average balances for earning assets, loans and equity. I generated it with Python so that every ratio stays within realistic ranges for a Russian bank of this size (NIM <span class="num">5&ndash;6%</span>, cost-to-income <span class="num">40&ndash;48%</span>, cost of risk <span class="num">1.2&ndash;2.2%</span>, ROE <span class="num">15&ndash;22%</span>), with December bonus seasonality and a January slowdown.</p>
+        </section>
+
+        <section>
+          <h2>Key findings</h2>
+
+          <h3>Ahead of plan for the year, behind in September</h3>
+          <p>Net profit for the 12 months reached <span class="num">₽34.8B</span>, <span class="num">3.6%</span> above plan. The bank beat plan in 9 of 12 months, but September closed <span class="num">5.3%</span> below plan (<span class="num">₽2.86B</span> against <span class="num">₽3.02B</span>), and Q3 as a whole finished roughly on plan (<span class="num">&minus;0.3%</span>).</p>
+
+          <h3>Credit quality is the main risk</h3>
+          <p>The September shortfall comes from provisions. Credit loss provisions were <span class="num">₽411M</span> (<span class="num">31%</span>) above plan. Annualised cost of risk rose from about <span class="num">1.4%</span> in October&ndash;July to <span class="num">1.9%</span> in August and <span class="num">2.1%</span> in September. The core business was not the problem: net interest income came in <span class="num">₽207M</span> above plan in the same month.</p>
+
+          <h3>Margin pressure from funding costs</h3>
+          <p>Interest expense absorbed <span class="num">58.8%</span> of interest income, against <span class="num">56.2%</span> a year earlier. As a result, interest income grew <span class="num">17%</span> year over year but net profit grew only <span class="num">10.6%</span>. Net interest margin fell from <span class="num">5.8%</span> to <span class="num">5.5%</span> and ROE from <span class="num">18.8%</span> to <span class="num">18.1%</span>. Funding costs eased slightly through 2026 and the margin recovered month by month &mdash; from <span class="num">5.1%</span> in October to <span class="num">6.0%</span> in September.</p>
+
+          <h3>Costs under control</h3>
+          <p>The cost-to-income ratio stayed close to <span class="num">42%</span> throughout the year. The only spike was December (<span class="num">46.5%</span>), driven by annual bonuses and year-end administrative spending, which the plan had anticipated.</p>
+        </section>
+
+        <section>
+          <h2>Conclusion</h2>
+          <p>The bank&rsquo;s operating engine is healthy: income is growing, costs are disciplined and the interest margin is recovering. The result for the year is ahead of plan. But the late-summer rise in provisions turned September into a miss, and if cost of risk stays above <span class="num">2%</span>, the full-year advantage over plan will shrink quickly. The dashboard makes that shift visible in one place, with the September shortfall traced back to the provisions line.</p>
+        </section>
+
+        <section>
+          <h2>Dashboard design &amp; interactivity</h2>
+          <ul>
+            <li><strong>One executive page.</strong> A headline figure with a plain-language explanation underneath, four KPI cards, a profit waterfall, a driver ranking, a monthly trend and the full P&amp;L statement.</li>
+            <li><strong>Period and baseline switches.</strong> One set of measures serves the month, quarter-to-date and year-to-date views. Every comparison works against both plan and prior year. Ratios are annualised for each period length.</li>
+            <li><strong>Auto-generated summary.</strong> A DAX measure finds the largest negative and largest positive driver and writes the sentence under the headline.</li>
+            <li><strong>Custom visuals in Deneb (Vega-Lite).</strong> The built-in Power BI waterfall cannot show intermediate totals, so I built the waterfall, the driver ranking, the monthly trend and the KPI sparklines as Vega-Lite specs.</li>
+            <li><strong>Correct sign convention.</strong> Variances are shown by their effect on profit, so higher costs show as negative and lower costs as positive. This matches how finance teams read a P&amp;L.</li>
+            <li><strong>Data model.</strong> A fact table with actual, plan and prior-year scenarios, a monthly calendar, and disconnected parameter tables for period, comparison, P&amp;L line structure and waterfall steps.</li>
+            <li><strong>Custom report theme.</strong> A warm, low-contrast palette with gold accents. The series colours were checked for colour-vision deficiency and text contrast.</li>
+          </ul>
+        </section>
+      </article>
+      <aside class="case-aside" aria-label="Project details">
+        <div class="card aside-card aside-details">
+          <h2>Project details</h2>
+          <dl class="aside-dl">
+            <div><dt>Category</dt><dd>Financial Analysis &middot; Banking</dd></div>
+            <div><dt>Type</dt><dd>Portfolio project</dd></div>
+            <div><dt>Date</dt><dd>October 2026</dd></div>
+            <div><dt>Tools</dt><dd>Power BI, DAX, Deneb (Vega-Lite), Python</dd></div>
+          </dl>
+        </div>
+        <div class="card aside-card">
+          <h2>Links</h2>
+          <ul class="aside-links">
+              <li><a href="https://app.powerbi.com/view?r=eyJrIjoiNDU1MTg1YTAtNGUyYS00ZjcwLWE1YTctNzhiNDU5ZjJlOTY0IiwidCI6ImY3YjQ5MjU0LTMxZmYtNDVkZS04NGJkLTEyMDczYzcyZDMzMSIsImMiOjEwfQ%3D%3D" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/></svg> Interactive dashboard<span class="visually-hidden"> (opens in a new tab)</span><svg class="icon icon-sm ext" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></li>
+              <li><a href="All_Projects.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/></svg> All projects</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <nav class="container pager" aria-label="More projects">
+      <a class="prev" href="All_Projects.html"><small><svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Previous</small><strong>All projects</strong></a>
+      <a class="next" href="Uzbekistan_population.html"><small>Next <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></small><strong>Uzbekistan Population Growth Analysis</strong></a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span data-year>2026</span> Sardor Ismatov &middot; BI Engineer, Tashkent</p>
+      <ul class="footer-links">
+        <li><a href="All_Projects.html">Projects</a></li>
+        <li><a href="files/Sardor_Ismatov_Resume.pdf">CV (PDF)</a></li>
+        <li><a href="mailto:sardorjonumidvich@gmail.com">Email</a></li>
+      </ul>
+      <ul class="socials">
+        <li><a class="social-link" href="https://t.me/Sardor_Umidvich" target="_blank" rel="noopener noreferrer" aria-label="Telegram (opens in a new tab)"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 4 3 11.2l6.3 2.3L12 20l3.4-4.2 4.1 3.2L21 4Z"/><path d="m9.3 13.5 7.2-5.2"/></svg></a></li>
+        <li><a class="social-link" href="https://www.linkedin.com/in/sardor-ismatov/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V16M8 7.5v.01M12 16v-5.5M12 13a2.5 2.5 0 0 1 5 0v3"/></svg></a></li>
+        <li><a class="social-link" href="https://github.com/SardorIsmatov" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li>
+        <li><a class="social-link" href="https://www.instagram.com/sardo.me" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in a new tab)"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

@@ -12,7 +12,8 @@ Cloudflare serves the files as they are. See `CLAUDE.md` for how to add a projec
 
 ```
 index.html                   Home: hero, featured projects, skills, experience, about, contact
-All_Projects.html            All five projects with a Power BI / SQL filter
+All_Projects.html            All projects with a Power BI / SQL filter
+Bank_PnL_performance.html    Case study: Bank P&L Performance (fictional bank, synthetic data)
 Uzbekistan_population.html   Case study: Uzbekistan Population Growth (2010-2023)
 Retail_sales_page.html       Case study: Retail Sales Analysis
 404.html                     Not-found page (served by Cloudflare for unknown URLs)

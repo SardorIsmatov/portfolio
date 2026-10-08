@@ -14,6 +14,7 @@ SITE = "https://portfolio.sardorjonumidvich.workers.dev"  # used for absolute og
 
 POP_EMBED = "https://app.powerbi.com/view?r=eyJrIjoiNWJhZWM4MTMtYzA1Zi00YmM3LTg2YmItYjM2ZmEwZDI5Zjk1IiwidCI6ImY3YjQ5MjU0LTMxZmYtNDVkZS04NGJkLTEyMDczYzcyZDMzMSIsImMiOjEwfQ%3D%3D"
 RETAIL_EMBED = "https://app.powerbi.com/view?r=eyJrIjoiZTNhMTE0NjctYjQyZS00NDI1LThkNzgtZmE3OGNmNzNlZjAzIiwidCI6ImY3YjQ5MjU0LTMxZmYtNDVkZS04NGJkLTEyMDczYzcyZDMzMSIsImMiOjEwfQ%3D%3D"
+PNL_EMBED = "https://app.powerbi.com/view?r=eyJrIjoiNDU1MTg1YTAtNGUyYS00ZjcwLWE1YTctNzhiNDU5ZjJlOTY0IiwidCI6ImY3YjQ5MjU0LTMxZmYtNDVkZS04NGJkLTEyMDczYzcyZDMzMSIsImMiOjEwfQ%3D%3D"
 BLINKIT = "https://app.powerbi.com/view?r=eyJrIjoiNjljYWExZjgtNThlNS00Y2FlLWJiYmEtZTY1YTNmMjhhNzM1IiwidCI6ImY3YjQ5MjU0LTMxZmYtNDVkZS04NGJkLTEyMDczYzcyZDMzMSIsImMiOjEwfQ%3D%3D"
 BANKING = "https://github.com/SardorIsmatov/PortfolioGithub/tree/main/Banking_project"
 KPIS = "https://github.com/SardorIsmatov/PortfolioGithub/tree/main/Retail_sales_KPIs_with_SQL"
@@ -237,6 +238,11 @@ COVERS = {
 }
 
 PROJECTS = [
+    dict(key="pnl", type="powerbi", label="Power BI", title="Bank P&amp;L Performance Dashboard",
+         desc="Executive Power BI dashboard for a fictional bank (synthetic data): monthly profit against plan and last year, what drove it and where risk is building.",
+         tags=["Power BI", "DAX", "Deneb", "Python"], img=("bank-pnl-dashboard", 1600, 940,
+         "Illustrated cover of the Bank P&amp;L Performance dashboard: a profit waterfall from interest income to net profit, period and plan switches, and KPI sparklines"),
+         page="Bank_PnL_performance.html", dash=PNL_EMBED),
     dict(key="population", type="powerbi", label="Power BI", title="Uzbekistan Population Growth Analysis (2010&ndash;2023)",
          desc="Power BI dashboard built on real demographic data, tracking population change across regions, districts and years.",
          tags=["Power BI", "SQL", "Pandas"], img=("uzbekistan-population-dashboard", 1409, 830,
@@ -257,6 +263,7 @@ PROJECTS = [
          desc="A set of SQL queries that calculate retail sales KPIs for growth.",
          tags=["SQL", "KPIs"], ext=(KPIS, "View on GitHub")),
 ]
+P_BY = {p["key"]: p for p in PROJECTS}
 
 
 def project_card(p, indent=8, featured=False, hl="h3"):
@@ -294,7 +301,7 @@ def project_card(p, indent=8, featured=False, hl="h3"):
 
 
 def build_index():
-    featured = "\n".join(project_card(p) for p in PROJECTS[:2])
+    featured = "\n".join(project_card(p) for p in PROJECTS if "page" in p)
     contact_items = f"""          <li><a class="contact-item" href="mailto:{EMAIL}"><span class="contact-ico">{icon("mail")}</span><span><small>Email</small><span>{EMAIL}</span></span></a></li>
           <li><a class="contact-item" href="tel:{PHONE_TEL}"><span class="contact-ico">{icon("phone")}</span><span><small>Phone</small><span>{PHONE.replace(" ", "&nbsp;")}</span></span></a></li>
           <li><div class="contact-item"><span class="contact-ico">{icon("pin")}</span><span><small>Location</small><span>Tashkent, Uzbekistan</span></span></div></li>"""
@@ -358,7 +365,7 @@ def build_index():
           <div>
             <p class="eyebrow">Featured work</p>
             <h2 class="section-title" id="projects-title">Case studies</h2>
-            <p class="section-lead">Two Power BI dashboards with a full write-up: the question, the findings and how the report is built.</p>
+            <p class="section-lead">Three Power BI dashboards with a full write-up: the question, the findings and how the report is built.</p>
           </div>
           <a class="btn btn-secondary" href="All_Projects.html">All projects {icon("arrow-right")}</a>
         </div>
@@ -571,8 +578,8 @@ def build_all():
     n_pbi = sum(1 for p in PROJECTS if p["type"] == "powerbi")
     n_sql = sum(1 for p in PROJECTS if p["type"] == "sql")
     html = head("Projects | Sardor Ismatov, BI Engineer",
-                "All data analytics projects by Sardor Ismatov: Power BI dashboards on population and retail sales data, and SQL projects.",
-                "assets/img/uzbekistan-population-dashboard.png")
+                "All data analytics projects by Sardor Ismatov: Power BI dashboards on bank P&amp;L, population and retail sales data, and SQL projects.",
+                "assets/img/bank-pnl-dashboard.png")
     html += "\n" + header("projects")
     html += f"""
   <main id="main">
@@ -584,7 +591,7 @@ def build_all():
         </ol>
       </nav>
       <h1 class="page-title">Projects</h1>
-      <p class="page-lead">Power BI dashboards and SQL work. The first two have full case studies; the others open the dashboard or the code on GitHub.</p>
+      <p class="page-lead">Power BI dashboards and SQL work. The first three have full case studies; the others open the dashboard or the code on GitHub.</p>
     </div>
 
     <section class="container" aria-label="Project list" style="padding-bottom: clamp(56px, 8vw, 96px);">
@@ -618,6 +625,7 @@ def build_case(c):
     links.append(f'<li><a href="All_Projects.html">{icon("layout")} All projects</a></li>')
     links = "\n".join("              " + l for l in links)
     tip = c.get("tip", "")
+    kpi_note = (f'\n      <p class="kpi-note">{c["kpi_note"]}</p>' if c.get("kpi_note") else "")
     pdf_btn = (f'<a class="btn btn-ghost btn-sm" href="{c["pdf"]}">{icon("file", "icon icon-sm")} PDF report</a>' if c.get("pdf") else "")
     prev_html = (f'<a class="prev" href="{c["prev"][0]}"><small>{icon("arrow-left", "icon icon-sm")} Previous</small><strong>{c["prev"][1]}</strong></a>'
                  if c.get("prev") else "")
@@ -640,9 +648,9 @@ def build_case(c):
       <h1 class="page-title">{c["title"]}</h1>
       <p class="page-lead">{c["lead"]}</p>
       <dl class="meta-row">
-        <div><dt>Category</dt><dd>Data Analysis</dd></div>
-        <div><dt>Type</dt><dd>Academic project</dd></div>
-        <div><dt>Date</dt><dd>March 2025</dd></div>
+        <div><dt>Category</dt><dd>{c.get("category", "Data Analysis")}</dd></div>
+        <div><dt>Type</dt><dd>{c.get("type", "Academic project")}</dd></div>
+        <div><dt>Date</dt><dd>{c.get("date", "March 2025")}</dd></div>
         <div><dt>Tools</dt><dd>{c["tools"]}</dd></div>
       </dl>
     </div>
@@ -651,7 +659,7 @@ def build_case(c):
       <h2 class="visually-hidden" id="kpi-title">Key figures</h2>
       <ul class="kpis">
 {kpis}
-      </ul>
+      </ul>{kpi_note}
     </section>
 
     <section class="container dash" id="dashboard" aria-labelledby="dash-title">
@@ -668,7 +676,7 @@ def build_case(c):
         <div class="dash-poster">
           {picture(name, w, h, alt, eager=True)}
           <div class="dash-poster-cta">
-            <p>Screenshot of the report. The live version is interactive.</p>
+            <p>{c.get("poster_note", "Screenshot of the report. The live version is interactive.")}</p>
             {ext_link(c["embed"], "Open interactive dashboard", "btn btn-primary")}
           </div>
         </div>
@@ -684,9 +692,9 @@ def build_case(c):
         <div class="card aside-card aside-details">
           <h2>Project details</h2>
           <dl class="aside-dl">
-            <div><dt>Category</dt><dd>Data Analysis</dd></div>
-            <div><dt>Type</dt><dd>Academic project</dd></div>
-            <div><dt>Date</dt><dd>March 2025</dd></div>
+            <div><dt>Category</dt><dd>{c.get("category", "Data Analysis")}</dd></div>
+            <div><dt>Type</dt><dd>{c.get("type", "Academic project")}</dd></div>
+            <div><dt>Date</dt><dd>{c.get("date", "March 2025")}</dd></div>
             <div><dt>Tools</dt><dd>{c["tools"]}</dd></div>
           </dl>
         </div>
@@ -832,7 +840,77 @@ RETAIL_TIP = f"""      <div class="callout">
         </div>
       </div>"""
 
+PNL_BODY = """        <section>
+          <h2>Project overview</h2>
+          <p>The dashboard answers the question a bank&rsquo;s management asks every month: did we make the profit we planned, and why not? It is built for a mid-sized commercial bank operating in a high key-rate environment. The page opens on a single headline &mdash; net profit for the period and its gap to plan &mdash; and then breaks that gap down step by step: from interest income to net profit, by line item, by driver and over time. The interface is in Russian, as it would be for the bank&rsquo;s own management team.</p>
+          <p>The dataset is synthetic: 12 months of actual, plan and prior-year P&amp;L, plus average balances for earning assets, loans and equity. I generated it with Python so that every ratio stays within realistic ranges for a Russian bank of this size (NIM <span class="num">5&ndash;6%</span>, cost-to-income <span class="num">40&ndash;48%</span>, cost of risk <span class="num">1.2&ndash;2.2%</span>, ROE <span class="num">15&ndash;22%</span>), with December bonus seasonality and a January slowdown.</p>
+        </section>
+
+        <section>
+          <h2>Key findings</h2>
+
+          <h3>Ahead of plan for the year, behind in September</h3>
+          <p>Net profit for the 12 months reached <span class="num">₽34.8B</span>, <span class="num">3.6%</span> above plan. The bank beat plan in 9 of 12 months, but September closed <span class="num">5.3%</span> below plan (<span class="num">₽2.86B</span> against <span class="num">₽3.02B</span>), and Q3 as a whole finished roughly on plan (<span class="num">&minus;0.3%</span>).</p>
+
+          <h3>Credit quality is the main risk</h3>
+          <p>The September shortfall comes from provisions. Credit loss provisions were <span class="num">₽411M</span> (<span class="num">31%</span>) above plan. Annualised cost of risk rose from about <span class="num">1.4%</span> in October&ndash;July to <span class="num">1.9%</span> in August and <span class="num">2.1%</span> in September. The core business was not the problem: net interest income came in <span class="num">₽207M</span> above plan in the same month.</p>
+
+          <h3>Margin pressure from funding costs</h3>
+          <p>Interest expense absorbed <span class="num">58.8%</span> of interest income, against <span class="num">56.2%</span> a year earlier. As a result, interest income grew <span class="num">17%</span> year over year but net profit grew only <span class="num">10.6%</span>. Net interest margin fell from <span class="num">5.8%</span> to <span class="num">5.5%</span> and ROE from <span class="num">18.8%</span> to <span class="num">18.1%</span>. Funding costs eased slightly through 2026 and the margin recovered month by month &mdash; from <span class="num">5.1%</span> in October to <span class="num">6.0%</span> in September.</p>
+
+          <h3>Costs under control</h3>
+          <p>The cost-to-income ratio stayed close to <span class="num">42%</span> throughout the year. The only spike was December (<span class="num">46.5%</span>), driven by annual bonuses and year-end administrative spending, which the plan had anticipated.</p>
+        </section>
+
+        <section>
+          <h2>Conclusion</h2>
+          <p>The bank&rsquo;s operating engine is healthy: income is growing, costs are disciplined and the interest margin is recovering. The result for the year is ahead of plan. But the late-summer rise in provisions turned September into a miss, and if cost of risk stays above <span class="num">2%</span>, the full-year advantage over plan will shrink quickly. The dashboard makes that shift visible in one place, with the September shortfall traced back to the provisions line.</p>
+        </section>
+
+        <section>
+          <h2>Dashboard design &amp; interactivity</h2>
+          <ul>
+            <li><strong>One executive page.</strong> A headline figure with a plain-language explanation underneath, four KPI cards, a profit waterfall, a driver ranking, a monthly trend and the full P&amp;L statement.</li>
+            <li><strong>Period and baseline switches.</strong> One set of measures serves the month, quarter-to-date and year-to-date views. Every comparison works against both plan and prior year. Ratios are annualised for each period length.</li>
+            <li><strong>Auto-generated summary.</strong> A DAX measure finds the largest negative and largest positive driver and writes the sentence under the headline.</li>
+            <li><strong>Custom visuals in Deneb (Vega-Lite).</strong> The built-in Power BI waterfall cannot show intermediate totals, so I built the waterfall, the driver ranking, the monthly trend and the KPI sparklines as Vega-Lite specs.</li>
+            <li><strong>Correct sign convention.</strong> Variances are shown by their effect on profit, so higher costs show as negative and lower costs as positive. This matches how finance teams read a P&amp;L.</li>
+            <li><strong>Data model.</strong> A fact table with actual, plan and prior-year scenarios, a monthly calendar, and disconnected parameter tables for period, comparison, P&amp;L line structure and waterfall steps.</li>
+            <li><strong>Custom report theme.</strong> A warm, low-contrast palette with gold accents. The series colours were checked for colour-vision deficiency and text contrast.</li>
+          </ul>
+        </section>"""
+
+PNL_TIP = f"""      <div class="callout">
+        {icon("bulb")}
+        <div>
+          <strong>Quick tip: everything on the page is driven by two switches in the header</strong>
+          <ol>
+            <li><span lang="ru">Месяц / Квартал / С начала года</span> &mdash; show the selected month, the quarter to date, or the year to date.</li>
+            <li><span lang="ru">План / Прошлый год</span> &mdash; compare against the budget or against the same period last year.</li>
+          </ol>
+          <p>Every figure, the waterfall, the driver ranking and the one-line summary under the headline update together.</p>
+        </div>
+      </div>"""
+
 CASES = {
+    "Bank_PnL_performance.html": dict(
+        doc_title="Bank P&amp;L Performance Dashboard | Sardor Ismatov",
+        meta_desc="Power BI case study by Sardor Ismatov: an executive P&amp;L dashboard for a fictional bank (synthetic data) comparing monthly profit with plan and last year, its drivers and the build-up of credit risk.",
+        crumb="Bank P&amp;L Performance",
+        title="Bank P&amp;L Performance Dashboard",
+        lead="An executive Power BI dashboard (fictional bank, synthetic data) that explains a commercial bank&rsquo;s monthly profit and loss against plan and against last year &mdash; what drove the result, and where the risk is building.",
+        category="Financial Analysis &middot; Banking", type="Portfolio project", date="October 2026",
+        tools="Power BI, DAX, Deneb (Vega-Lite), Python",
+        kpis=[("₽34.8B", "Net profit"), ("+3.6%", "Net profit vs plan"), ("18.1%", "Return on equity"),
+              ("5.5%", "Net interest margin"), ("42.7%", "Cost-to-income ratio"), ("1.50%", "Cost of risk")],
+        kpi_note="Key figures for 12 months, Oct 2025 &ndash; Sep 2026.",
+        img=P_BY["pnl"]["img"], embed=PNL_EMBED,
+        iframe_title="Bank P&amp;L Performance, interactive Power BI dashboard",
+        poster_note="Illustrated preview. The live report is interactive.",
+        body=PNL_BODY, tip=PNL_TIP,
+        prev=("All_Projects.html", "All projects"),
+        next=("Uzbekistan_population.html", "Uzbekistan Population Growth Analysis"),
+    ),
     "Uzbekistan_population.html": dict(
         doc_title="Uzbekistan Population Growth Analysis (2010&ndash;2023) | Sardor Ismatov",
         meta_desc="Power BI case study by Sardor Ismatov: Uzbekistan's population growth from 2010 to 2023 across 14 administrative divisions and 206 districts.",
@@ -842,11 +920,11 @@ CASES = {
         tools="SQL, Power BI, Pandas",
         kpis=[("+10.68M", "Population growth, <span style=\"white-space: nowrap\">2010&ndash;2023</span>"), ("+42.99%", "Overall increase"),
               ("3.31%", "Average annual growth (YoY)"), ("14", "Administrative divisions"), ("206", "Districts")],
-        img=PROJECTS[0]["img"], embed=POP_EMBED,
+        img=P_BY["population"]["img"], embed=POP_EMBED,
         iframe_title="Uzbekistan Population Growth (2010-2023), interactive Power BI dashboard",
         pdf=POP_PDF, body=POP_BODY,
         next=("Retail_sales_page.html", "Retail Sales Analysis"),
-        prev=("All_Projects.html", "All projects"),
+        prev=("Bank_PnL_performance.html", "Bank P&amp;L Performance Dashboard"),
     ),
     "Retail_sales_page.html": dict(
         doc_title="Retail Sales Analysis | Sardor Ismatov",
@@ -857,7 +935,7 @@ CASES = {
         tools="SQL, Power BI, Python",
         kpis=[("$3.01M", "Total sales"), ("$858.8K", "Profit"), ("28.51%", "Profit margin"),
               ("1,500", "Customers"), ("~27K", "Orders")],
-        img=PROJECTS[1]["img"], embed=RETAIL_EMBED,
+        img=P_BY["retail"]["img"], embed=RETAIL_EMBED,
         iframe_title="Retail Sales Overview, interactive Power BI dashboard",
         body=RETAIL_BODY, tip=RETAIL_TIP,
         prev=("Uzbekistan_population.html", "Uzbekistan Population Growth Analysis"),
