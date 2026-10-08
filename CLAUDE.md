@@ -18,6 +18,7 @@ The owner adds projects and updates content by asking Claude. Read this first; i
 ## Content rules
 - Only publish facts the owner gave (CV, messages). Never invent metrics, employers, dates or results.
 - The Uzbekistan population numbers come from the owner's dashboard; do not change them unless asked.
+- Projects show no creation date (owner's request). Data periods in titles or KPI notes are fine.
 - Current role: BI Engineer at National Bank of Uzbekistan (NBU), Jul 2025 to present.
 - The site must match the CV in `files/Sardor_Ismatov_Resume.pdf` (titles, dates, numbers).
   When the owner sends a new CV, replace that file and re-check the experience section against it.

@@ -650,7 +650,6 @@ def build_case(c):
       <dl class="meta-row">
         <div><dt>Category</dt><dd>{c.get("category", "Data Analysis")}</dd></div>
         <div><dt>Type</dt><dd>{c.get("type", "Academic project")}</dd></div>
-        <div><dt>Date</dt><dd>{c.get("date", "March 2025")}</dd></div>
         <div><dt>Tools</dt><dd>{c["tools"]}</dd></div>
       </dl>
     </div>
@@ -694,7 +693,6 @@ def build_case(c):
           <dl class="aside-dl">
             <div><dt>Category</dt><dd>{c.get("category", "Data Analysis")}</dd></div>
             <div><dt>Type</dt><dd>{c.get("type", "Academic project")}</dd></div>
-            <div><dt>Date</dt><dd>{c.get("date", "March 2025")}</dd></div>
             <div><dt>Tools</dt><dd>{c["tools"]}</dd></div>
           </dl>
         </div>
@@ -899,7 +897,7 @@ CASES = {
         crumb="Bank P&amp;L Performance",
         title="Bank P&amp;L Performance Dashboard",
         lead="An executive Power BI dashboard (fictional bank, synthetic data) that explains a commercial bank&rsquo;s monthly profit and loss against plan and against last year &mdash; what drove the result, and where the risk is building.",
-        category="Financial Analysis &middot; Banking", type="Portfolio project", date="June 2026",
+        category="Financial Analysis &middot; Banking", type="Portfolio project",
         tools="Power BI, DAX, Deneb (Vega-Lite), Python",
         kpis=[("₽34.8B", "Net profit"), ("+3.6%", "Net profit vs plan"), ("18.1%", "Return on equity"),
               ("5.5%", "Net interest margin"), ("42.7%", "Cost-to-income ratio"), ("1.50%", "Cost of risk")],
